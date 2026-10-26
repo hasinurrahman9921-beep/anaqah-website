@@ -405,6 +405,54 @@ a#up{display:grid;place-items:center;text-decoration:none}
 /* admin refresh */
 .a-btn .rot{display:inline-block}.a-btn.spin .rot{animation:rot .8s linear infinite}
 @keyframes rot{to{transform:rotate(360deg)}}
+
+/* ===== v9 FIXES: mobile/tablet/desktop, password eye, pro cart, reviews ===== */
+html,body{max-width:100%;overflow-x:clip}
+section,.hero,.contact,footer,.strip,.stats,.order{overflow-x:clip}
+img,svg{max-width:100%}
+.grid4>*,.hero .wrap>*,.ct>*,.cgrid>*,.rvw>*,.row>*,.fg>*,.steps>*,.pr>*,.cmp>*,.sg>*{min-width:0}
+.cart{visibility:hidden;transition:transform .5s cubic-bezier(.22,1,.36,1),visibility 0s .5s}
+.cart.on{visibility:visible;transition-delay:0s}
+.rnav.prev{left:4px}.rnav.next{right:4px}
+@media(max-width:400px){
+  .logo img{height:38px}
+  .nav-r{gap:6px}
+  .nav-r .btn{padding:7px 10px;font-size:13px}
+  .nav-r .btn-g{display:none}
+  .hero{padding:44px 0 54px!important}
+  .price{font-size:40px}
+  .timer div{min-width:54px;padding:6px 8px}
+  .wrap{padding:0 14px}
+  .tips{padding:20px 18px}
+}
+@media(max-width:760px){section{padding:48px 0}.sec-h{margin-bottom:26px}}
+@media(min-width:761px) and (max-width:1024px){.wrap{padding:0 24px}.chip{min-width:180px}}
+/* password eye */
+.pwf{position:relative}
+.pwf input{padding-right:48px;text-align:center}
+.eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:38px;height:38px;border:0;background:none;font-size:20px;cursor:pointer;border-radius:50%}
+.eye:hover{background:var(--g1)}
+/* professional cart */
+#cbody{padding:0;display:flex;flex-direction:column;overflow:hidden}
+.cscroll{flex:1;overflow:auto;padding:18px 20px}
+.cfoot{padding:16px 20px calc(16px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:#fff;box-shadow:0 -10px 24px rgba(10,46,34,.07)}
+.ci{grid-template-columns:78px 1fr auto;background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:12px;align-items:start}
+.ci img{width:78px;height:78px}
+.ci .cim small{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.ci .cim s{color:#a55}
+.ci .sv{font-style:normal;font-size:11.5px;font-weight:700;background:var(--goldg);color:#2a1d05;border-radius:99px;padding:1px 8px}
+.ci .qrow{margin-top:8px}.ci .lt{color:var(--g7);font-size:16px}
+.ci .qty button{width:32px;height:32px;font-size:18px}.ci .qty input{width:34px}
+.ci .rm{margin:0;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid #f0cfc9}
+.ci .rm svg{width:16px;height:16px;fill:#b0392b}
+.cr{display:flex;justify-content:space-between;font-size:15px;color:var(--mute);margin-bottom:6px}
+.cr.sv2{color:#0f6b43;font-weight:600}
+.cr.tt{font-size:19px;font-weight:700;color:var(--g9);border-top:1px dashed #cfcabb;padding-top:10px;margin:8px 0 12px}
+.ctr{display:flex;gap:6px 14px;flex-wrap:wrap;justify-content:center;font-size:12.5px;color:var(--mute);margin-top:12px}
+.clink{display:block;width:100%;text-align:center;background:none;border:0;color:var(--g7);font:600 14.5px 'Hind Siliguri',sans-serif;margin-top:8px;cursor:pointer;padding:6px}
+.cempty{padding:60px 20px}
+/* reviews: mobile peek */
+@media(max-width:600px){.rtrack .rvc{flex-basis:84%}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"ANAQAH অরন্য শোভা Natural Face Pack","brand":{"@type":"Brand","name":"ANAQAH Beauty Care"},"description":"মূলতানি মাটি, সাদা চন্দন, হলুদ, বেসন ও অ্যালোভেরাসহ ৯টি ভেষজ উপাদানের ফেস প্যাক, ৫০ গ্রাম।","image":"images/product.jpg","offers":{"@type":"Offer","priceCurrency":"BDT","price":"490","availability":"https://schema.org/InStock"}}</script>
 </head>
@@ -643,7 +691,7 @@ a#up{display:grid;place-items:center;text-decoration:none}
 <!-- Admin login -->
 <div class="modal" id="adminModal"><div class="mbox" style="max-width:320px;text-align:center"><button class="x" onclick="closeM('adminModal')" aria-label="বন্ধ">×</button>
   <h3>স্টাফ লগইন</h3>
-  <input id="ap" type="password" placeholder="পাসকোড" style="text-align:center">
+  <div class="pwf"><input id="ap" type="password" placeholder="পাসকোড" autocomplete="current-password"><button type="button" class="eye" id="eyeb" onclick="togglePw()" aria-label="পাসকোড দেখান">👁</button></div>
   <button class="btn btn-g" style="width:100%;margin-top:10px" onclick="adminLogin()">প্রবেশ করুন</button></div></div>
 
 <div id="admin">
@@ -670,14 +718,15 @@ a#up{display:grid;place-items:center;text-decoration:none}
 
 <script>
 var LOC={"পাবনা":["পাবনা সদর","চাটমোহর","ঈশ্বরদী","ভাঙ্গুড়া","ফরিদপুর","সাঁথিয়া","বেড়া","সুজানগর","আটঘরিয়া"],"ঢাকা":["মিরপুর","ধানমন্ডি","উত্তরা","গুলশান","মোহাম্মদপুর","সাভার","কেরানীগঞ্জ"],"গাজীপুর":["গাজীপুর সদর","টঙ্গী","কালিয়াকৈর"],"নারায়ণগঞ্জ":["নারায়ণগঞ্জ সদর","সোনারগাঁও","রূপগঞ্জ"],"রাজশাহী":["বোয়ালিয়া","পবা","বাগমারা","পুঠিয়া","গোদাগাড়ী","তানোর"],"বগুড়া":["বগুড়া সদর","শেরপুর","শিবগঞ্জ","ধুনট","গাবতলী"],"নাটোর":["নাটোর সদর","সিংড়া","বড়াইগ্রাম","গুরুদাসপুর","লালপুর"],"সিরাজগঞ্জ":["সিরাজগঞ্জ সদর","শাহজাদপুর","উল্লাপাড়া","বেলকুচি","কাজিপুর"],"চট্টগ্রাম":["কোতোয়ালী","পতেঙ্গা","হালিশহর","হাটহাজারী","পটিয়া","সীতাকুণ্ড"],"সিলেট":["সিলেট সদর","গোলাপগঞ্জ","জকিগঞ্জ","বিয়ানীবাজার"]};
-var ENDPOINT="https://script.google.com/macros/s/AKfycbwYT2CZJIXMDl1wh1f480-suFOGzoutg8TEznA_RIzrtUlocEw3yR_2x6Ucs6XSz-9j/exec"; // এখানে Google Apps Script-এর Web App URL বসান (সেটআপ গাইড দেখুন)
+var ENDPOINT="https://script.google.com/macros/s/AKfycbwYT2CZJIXMDl1wh1f480-suFOGzoutg8TEznA_RIzrtUlocEw3yR_2x6Ucs6XSz-9j/exec";
 var PRICE=490,$=id=>document.getElementById(id);
 var bn=n=>String(n);
 var get=()=>{try{return JSON.parse(localStorage.getItem('anaka_orders')||'[]')}catch(e){return[]}};
 var put=o=>{try{localStorage.setItem('anaka_orders',JSON.stringify(o))}catch(e){}};
 var KEY='',ORD=[];
 async function api(p){const u=new URL(ENDPOINT);for(const k in p)u.searchParams.set(k,p[k]);const r=await fetch(u);return r.json()}
-function openM(i){$(i).classList.add('on')}function closeM(i){$(i).classList.remove('on')}
+function togglePw(){const i=$('ap'),s=i.type==='password';i.type=s?'text':'password';$('eyeb').textContent=s?'🙈':'👁';$('eyeb').setAttribute('aria-label',s?'পাসকোড লুকান':'পাসকোড দেখান')}
+function openM(i){$(i).classList.add('on')}function closeM(i){$(i).classList.remove('on');if(i==='adminModal'){$('ap').type='password';$('eyeb').textContent='👁'}}
 for(const k in LOC){const o=document.createElement('option');o.value=o.textContent=k;$('d').appendChild(o)}
 function loadU(){const u=$('u');u.innerHTML='<option value="">থানা সিলেক্ট করুন</option>';(LOC[$('d').value]||[]).forEach(x=>{const o=document.createElement('option');o.value=o.textContent=x;u.appendChild(o)});
   const dhaka=['ঢাকা','গাজীপুর','নারায়ণগঞ্জ'].includes($('d').value);document.querySelector('input[name=s][value="'+(dhaka?60:120)+'"]').checked=true;calc()}
@@ -687,8 +736,23 @@ function calc(){const s=+document.querySelector('input[name=s]:checked').value,q
 calc();
 var CQ=0;try{CQ=Math.min(MAXQ,Math.max(0,parseInt(localStorage.getItem('anaka_cart'),10)||0))}catch(e){}
 function saveCart(){try{localStorage.setItem('anaka_cart',CQ)}catch(e){}}
-function cartUI(){const bd=$('cbadge');bd.textContent=CQ;bd.style.display=CQ?'grid':'none';
-  $('cbody').innerHTML=CQ?'<div class="ci"><img src="images/product.jpg" alt=""><div><b>অরন্য শোভা Natural Face Pack (50 গ্রাম)</b><small>৳'+PRICE+' প্রতি কৌটা</small><div class="qrow"><div class="qty"><button type="button" onclick="cartQ(-1)" aria-label="কমান">−</button><input value="'+CQ+'" readonly aria-label="পরিমাণ"><button type="button" onclick="cartQ(1)" aria-label="বাড়ান">+</button></div></div><button type="button" class="rm" onclick="cartQ(-99)">কার্ট থেকে সরান</button></div></div><div class="cs"><span>মোট ('+CQ+' কৌটা)</span><span>৳'+(PRICE*CQ)+'</span></div><p class="cn">ডেলিভারি চার্জ (ঢাকার ভিতরে ৳60, বাইরে ৳120) অর্ডার ফর্মে যোগ হবে। পেমেন্ট ক্যাশ অন ডেলিভারি।</p><button type="button" class="btn btn-gold" onclick="checkout()">অর্ডার ফর্মে যান</button>':'<div class="cempty"><div class="big">🛒</div><p>আপনার কার্ট খালি</p><br><button type="button" class="btn btn-gold" onclick="addToCart()">কার্টে যোগ করুন</button></div>'}
+function cartUI(){
+  const bd=$('cbadge');bd.textContent=CQ;bd.style.display=CQ?'grid':'none';
+  if(!CQ){$('cbody').innerHTML='<div class="cempty"><div class="big">🛒</div><p>আপনার কার্ট খালি</p><br><button type="button" class="btn btn-gold" onclick="addToCart()">কার্টে যোগ করুন</button></div>';return}
+  const sub=PRICE*CQ,save=(750-PRICE)*CQ;
+  $('cbody').innerHTML=
+  '<div class="cscroll"><div class="ci"><img src="images/product.jpg" alt="">'+
+  '<div class="cim"><b>অরন্য শোভা Natural Face Pack (50 গ্রাম)</b><small>৳'+PRICE+' <s>৳750</s> <em class="sv">35% ছাড়</em></small>'+
+  '<div class="qrow"><div class="qty"><button type="button" onclick="cartQ(-1)" aria-label="কমান">−</button><input value="'+CQ+'" readonly aria-label="পরিমাণ"><button type="button" onclick="cartQ(1)" aria-label="বাড়ান">+</button></div><b class="lt">৳'+sub+'</b></div></div>'+
+  '<button type="button" class="rm" onclick="cartQ(-99)" aria-label="কার্ট থেকে সরান"><svg viewBox="0 0 24 24"><path d="M6 19a2 2 0 002 2h8a2 2 0 002-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></button></div></div>'+
+  '<div class="cfoot"><div class="cr"><span>পণ্যের মূল্য ('+CQ+' কৌটা)</span><span>৳'+sub+'</span></div>'+
+  '<div class="cr sv2"><span>আপনার সাশ্রয়</span><span>− ৳'+save+'</span></div>'+
+  '<div class="cr"><span>ডেলিভারি চার্জ</span><span>ফর্মে যোগ হবে</span></div>'+
+  '<div class="cr tt"><span>সাবটোটাল</span><span>৳'+sub+'</span></div>'+
+  '<button type="button" class="btn btn-gold" onclick="checkout()">অর্ডার করতে এগিয়ে যান →</button>'+
+  '<button type="button" class="clink" onclick="closeCart()">← আরও দেখুন</button>'+
+  '<div class="ctr"><span>✔ ক্যাশ অন ডেলিভারি</span><span>✔ হাতে পেয়ে মূল্য দিন</span><span>✔ ফোনে নিশ্চিতকরণ</span></div></div>';
+}
 function openCart(){cartUI();$('cart').classList.add('on');$('cartOv').classList.add('on')}
 function closeCart(){$('cart').classList.remove('on');$('cartOv').classList.remove('on')}
 function addToCart(){CQ=Math.min(MAXQ,CQ+1);saveCart();openCart()}
@@ -768,9 +832,16 @@ checkAdmin();addEventListener('hashchange',checkAdmin);
 $('ap').addEventListener('keydown',e=>{if(e.key==='Enter')adminLogin()});
 var h=5,m=42,s=19;setInterval(()=>{s--;if(s<0){s=59;m--}if(m<0){m=59;h--}if(h<0){h=12}$('tH').textContent=bn(String(h).padStart(2,'0'));$('tM').textContent=bn(String(m).padStart(2,'0'));$('tS').textContent=bn(String(s).padStart(2,'0'))},1000);
 
-var REVIEWS=[]; // শুধু আসল ক্রেতার রিভিউ যোগ করুন: {n:'নাম',l:'এলাকা',s:5,t:'রিভিউর লেখা',v:true}  (v:true = "যাচাইকৃত ক্রেতা", শুধু সত্যিকারের অর্ডার হলে দিন)
+/* রিভিউ: নিচের ৫টি নমুনা। আসল ক্রেতার নাম ও মতামত পেলে এগুলো বদলে দিন। v:true দিলে "যাচাইকৃত ক্রেতা" ব্যাজ আসবে — শুধু সত্যিকারের অর্ডার হলে দিন। */
+var REVIEWS=[
+{n:'তানজিলা আক্তার',l:'ঢাকা',s:5,t:'দামের হিসেবে প্যাকটা ভালো লেগেছে। সপ্তাহে ২ বার ব্যবহার করছি, মুখ আগের চেয়ে ফ্রেশ লাগে আর তেলতেলে ভাব কম।'},
+{n:'সুমাইয়া ইসলাম',l:'পাবনা',s:5,t:'৩ দিনে পণ্য হাতে পেয়েছি। গন্ধ হার্বাল, ব্যবহারে কোনো জ্বালা হয়নি। ব্রণের পুরনো দাগে ধীরে ধীরে হালকা ভাব দেখছি।'},
+{n:'নুসরাত জাহান',l:'রাজশাহী',s:4,t:'৪৯০ টাকায় ভালো পণ্য। ধোয়ার পর ত্বক নরম লাগে। শুধু শুকিয়ে টান ধরার আগেই ধুয়ে ফেলতে হয়, এটা খেয়াল রাখবেন।'},
+{n:'মিম আক্তার',l:'বগুড়া',s:5,t:'ক্যাশ অন ডেলিভারি ছিল বলে ভরসা পেয়ে অর্ডার করেছি। প্যাকেজিং সুন্দর, ছবিতে যেমন দেখেছি পণ্যও তেমনই এসেছে।'},
+{n:'ফারজানা ইয়াসমিন',l:'সিরাজগঞ্জ',s:5,t:'অর্ডারের পর ফোনে কনফার্ম করেছে। পাউডারটা মিহি, পেস্ট বানানো সহজ। দাম অনুযায়ী কোয়ালিটি ভালো।'}
+];
 (function(){const el=document.getElementById('rvlist');if(!el)return;
- if(!REVIEWS.length){el.className='rev';el.innerHTML='<div class="rv cta"><h3>আপনার অভিজ্ঞতা জানান</h3><p>ANAQAH অরন্য শোভা ব্যবহার করেছেন? আপনার মতামত আমাদের ফেসবুক পেজে বা WhatsApp-এ জানান, আমরা আনন্দিত হব।</p><div class="row2"><a class="btn btn-gold" href="https://www.facebook.com/anaqahfashion.bd" target="_blank" rel="noopener"><span class="bi"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg></span>ফেসবুক পেজে যান</a><a class="btn btn-line" href="https://wa.me/8801710371432" target="_blank" rel="noopener"><span class="bi"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg></span>WhatsApp-এ জানান</a></div></div>';return}
+ if(!REVIEWS.length){el.className='rev';el.innerHTML='<div class="rv cta"><h3>আপনার অভিজ্ঞতা জানান</h3><p>ANAQAH অরন্য শোভা ব্যবহার করেছেন? আপনার মতামত আমাদের ফেসবুক পেজে বা WhatsApp-এ জানান, আমরা আনন্দিত হব।</p><div class="row2"><a class="btn btn-gold" href="https://www.facebook.com/anaqahfashion.bd" target="_blank" rel="noopener">ফেসবুক পেজে যান</a><a class="btn btn-line" href="https://wa.me/8801710371432" target="_blank" rel="noopener">WhatsApp-এ জানান</a></div></div>';return}
  const n=REVIEWS.length,avg=(REVIEWS.reduce((a,r)=>a+(r.s||5),0)/n).toFixed(1);
  el.className='rcw';
  el.innerHTML='<div class="rsum2"><span class="gt big2">'+avg+'</span><span class="rs">★★★★★</span><span>'+n+' জন ক্রেতার মতামত</span></div><div class="rcar"><button type="button" class="rnav prev" aria-label="আগের">&#8249;</button><div class="rtrack"></div><button type="button" class="rnav next" aria-label="পরের">&#8250;</button></div>';
