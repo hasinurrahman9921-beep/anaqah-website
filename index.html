@@ -4213,9 +4213,14 @@
         }
 
         /* v12: new sections + colour grading */
+        .js .cmp>div.reveal.in,
+        .js .sg>div.reveal.in {
+            transform: none !important
+        }
+
         .offer-note {
             display: inline-block;
-            margin: 10px 0 6px;
+            margin: 8px 0 0;
             font-size: 12.5px;
             font-weight: 600;
             color: #8a5f1c;
@@ -4505,7 +4510,7 @@
             <div>
                 <span class="tag">100% প্রাকৃতিক ভেষজ ফর্মুলা</span>
                 <h1>ব্রণের দাগ ও তৈলাক্ত ভাব কমিয়ে ফিরে পান <span class="gt">উজ্জ্বল, প্রাণবন্ত ত্বক</span></h1>
-                <p class="lead">ঘিলাফলের শ্বাস, সোহাগা, ফিটকারি, হলুদ মাটি, কাঁচা হলুদ, মসুর ডাল বেসন, অ্যালোভেরা ও সাদা চন্দনের সংমিশ্রণে তৈরি ANAQAH অর্গানিক হারবাল
+                <p class="lead">মূলতানি মাটি, সাদা চন্দন, হলুদ, বেসন ও অ্যালোভেরার সংমিশ্রণে তৈরি ANAQAH অর্গানিক হারবাল
                     ফেস প্যাক — নিয়মিত ব্যবহারে ত্বক হয় পরিষ্কার ও সতেজ।</p>
                 <div class="cta"><a href="#order" class="btn btn-gold">এখনই অর্ডার করুন</a><a href="#benefits"
                         class="btn btn-line">উপকারিতা দেখুন</a></div>
@@ -4520,7 +4525,12 @@
                 <div><span class="old">৳750</span><span class="badge">35% ছাড়</span></div>
                 <div class="price">৳490</div>
                 <small style="color:var(--mute)">+ ডেলিভারি চার্জ</small>
-                <div class="offer-note">⏳ সীমিত সময়ের অফার মূল্য</div>
+                <div class="offer-note">⏳ অফার শেষ হতে বাকি</div>
+                <div class="timer">
+                    <div><b id="tH">05</b><span>ঘণ্টা</span></div>
+                    <div><b id="tM">00</b><span>মিনিট</span></div>
+                    <div><b id="tS">00</b><span>সেকেন্ড</span></div>
+                </div>
                 <a href="#order" class="btn btn-gold" style="width:100%">অর্ডার নিশ্চিত করুন</a>
                 <button type="button" class="btn btn-o2" onclick="addToCart()" style="width:100%;margin-top:10px"><span
                         class="bi"><svg viewBox="0 0 24 24">
@@ -5297,6 +5307,12 @@
             var co = new IntersectionObserver(en => en.forEach(x => { if (!x.isIntersecting) return; const e = x.target, t = +e.dataset.n, st = performance.now(); (function f(n) { const p = Math.min(1, (n - st) / 1300); e.textContent = Math.round(t * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(f) })(st); co.unobserve(e) }), { threshold: .5 });
             document.querySelectorAll('[data-n]').forEach(e => co.observe(e));
             var bar = $('pg'), up = $('up'), hd = document.querySelector('header');
+            (function () {
+                var left = 5 * 3600 + Math.floor(Math.random() * 55 * 60) + Math.floor(Math.random() * 60);
+                var H = $('tH'), M = $('tM'), S = $('tS'), pd = n => String(n).padStart(2, '0');
+                function tick() { if (left <= 0) left = 5 * 3600 + Math.floor(Math.random() * 55 * 60); var h = Math.floor(left / 3600), m = Math.floor(left % 3600 / 60), x = left % 60; H.textContent = pd(h); M.textContent = pd(m); S.textContent = pd(x); left-- }
+                tick(); setInterval(tick, 1000)
+            })();
             var ly = 0; addEventListener('scroll', () => { const y = scrollY; if (Math.abs(y - ly) > 8) { document.body.classList.toggle('bar-hide', y > ly && y > 300); ly = y } const h = document.documentElement, m = h.scrollHeight - h.clientHeight; bar.style.width = (m > 0 ? h.scrollTop / m * 100 : 0) + '%'; up.classList.toggle('on', h.scrollTop > 600); hd.classList.toggle('sh', h.scrollTop > 10) }, { passive: true });
         })();
     </script>
