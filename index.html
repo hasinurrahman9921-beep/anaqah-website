@@ -366,6 +366,45 @@ a#up{display:grid;place-items:center;text-decoration:none}
 @keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
 .okid{background:var(--g1);border-radius:12px;padding:10px;margin:12px 0 16px;font-size:15.5px}.okid b{color:var(--g9);letter-spacing:.04em}
 .okb{display:grid;gap:10px}.okb .btn{width:100%;text-align:center}
+
+/* ===== v8 cart, carousel, admin ===== */
+.cartb{position:relative;width:42px;height:42px;border-radius:50%;border:1.5px solid var(--g7);background:#fff;color:var(--g7);display:grid;place-items:center;cursor:pointer;padding:0;transition:.25s}
+.cartb:hover{background:var(--g7);color:#fff}.cartb svg{width:20px;height:20px;fill:currentColor}
+#cbadge{position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;border-radius:99px;background:var(--goldg);color:#2a1d05;font:700 12px 'Hind Siliguri',sans-serif;display:none;place-items:center;padding:0 5px}
+.btn-o2{border:1.5px solid var(--g7);color:var(--g7);background:#fff}.btn-o2:hover{background:var(--g7);color:#fff;transform:translateY(-2px)}
+.btn-o2 .bi svg{fill:currentColor}
+.cov{position:fixed;inset:0;background:rgba(7,31,23,.55);opacity:0;pointer-events:none;transition:opacity .35s;z-index:64;backdrop-filter:blur(2px)}
+.cov.on{opacity:1;pointer-events:auto}
+.cart{position:fixed;top:0;right:0;height:100%;width:min(410px,100%);background:#fff;z-index:65;transform:translateX(105%);transition:transform .5s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;box-shadow:-20px 0 50px rgba(0,0,0,.2)}
+.cart.on{transform:none}
+.ch{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:linear-gradient(135deg,#14573f,#0a2e22);color:#fff}
+.ch b{font-size:18px}.ch button{background:none;border:0;color:#fff;font-size:28px;cursor:pointer;line-height:1}
+#cbody{padding:20px;overflow:auto;flex:1}
+.ci{display:grid;grid-template-columns:84px 1fr;gap:14px;align-items:center;padding-bottom:16px;border-bottom:1px dashed #d9d4c6}
+.ci img{width:84px;height:84px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
+.ci b{display:block;color:var(--g9);font-size:15.5px;line-height:1.35}.ci small{color:var(--mute)}
+.ci .qrow{margin-top:8px}
+.cs{display:flex;justify-content:space-between;margin:16px 0 4px;font-size:17px;font-weight:700;color:var(--g9)}
+.cn{color:var(--mute);font-size:13.5px;margin-bottom:16px}
+.cempty{text-align:center;color:var(--mute);padding:50px 10px}.cempty .big{font-size:46px}
+#cbody .btn{width:100%;text-align:center}
+.ci .rm{background:none;border:0;color:#b0392b;font-size:13px;cursor:pointer;margin-top:6px;padding:0}
+@media(max-width:760px){.mbar{display:flex;gap:10px}.mbar .btn{width:auto;flex:1}.mbar .btn.mc{flex:0 0 52px;background:#fff;color:var(--g7);border:1.5px solid var(--g7);display:grid;place-items:center;padding:0}.nav-r .btn{padding:8px 12px}.cartb{width:38px;height:38px}}
+/* review carousel */
+.rcw{max-width:1100px;margin:0 auto}
+.rsum2{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:20px;color:var(--mute)}
+.rsum2 .big2{font-size:38px;font-weight:700;line-height:1}.rsum2 .rs{color:var(--gold);letter-spacing:3px;font-size:20px}
+.rcar{position:relative}
+.rtrack{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:6px 2px 16px}
+.rtrack::-webkit-scrollbar{display:none}
+.rtrack .rvc{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start;box-shadow:0 8px 24px rgba(10,46,34,.07)}
+@media(max-width:900px){.rtrack .rvc{flex-basis:calc((100% - 16px)/2)}}
+@media(max-width:600px){.rtrack .rvc{flex-basis:100%}}
+.rnav{position:absolute;top:46%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;box-shadow:0 8px 20px rgba(10,46,34,.18);font-size:26px;line-height:1;cursor:pointer;z-index:2;color:var(--g7);padding:0 0 3px}
+.rnav:hover{background:var(--g7);color:#fff}.rnav.prev{left:-12px}.rnav.next{right:-12px}
+/* admin refresh */
+.a-btn .rot{display:inline-block}.a-btn.spin .rot{animation:rot .8s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"ANAQAH অরন্য শোভা Natural Face Pack","brand":{"@type":"Brand","name":"ANAQAH Beauty Care"},"description":"মূলতানি মাটি, সাদা চন্দন, হলুদ, বেসন ও অ্যালোভেরাসহ ৯টি ভেষজ উপাদানের ফেস প্যাক, ৫০ গ্রাম।","image":"images/product.jpg","offers":{"@type":"Offer","priceCurrency":"BDT","price":"490","availability":"https://schema.org/InStock"}}</script>
 </head>
@@ -378,7 +417,7 @@ a#up{display:grid;place-items:center;text-decoration:none}
 <div class="wrap nav">
   <a href="#" class="logo"><img src="images/logo.png" alt="ANAQAH Beauty Care" height="48"></a>
   <nav class="menu"><a href="#benefits">উপকারিতা</a><a href="#ingredients">উপাদান</a><a href="#safety">নিরাপদ ব্যবহার</a><a href="#faq">প্রশ্নোত্তর</a><a href="#contact">যোগাযোগ</a></nav>
-  <div class="nav-r"><button class="btn btn-o" onclick="openM('trackModal')">ট্র্যাক করুন</button><a href="#order" class="btn btn-g">অর্ডার করুন</a></div>
+  <div class="nav-r"><button class="cartb" onclick="openCart()" aria-label="কার্ট"><svg viewBox="0 0 24 24"><path d="M7 18a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 007 17h12v-2H7.4l1.1-2h7.5a2 2 0 001.8-1l3.6-6.5A1 1 0 0020.5 4H5.2l-.9-2H1z"/></svg><span id="cbadge">0</span></button><button class="btn btn-o" onclick="openM('trackModal')">ট্র্যাক করুন</button><a href="#order" class="btn btn-g">অর্ডার করুন</a></div>
 </div>
 </header>
 
@@ -399,6 +438,7 @@ a#up{display:grid;place-items:center;text-decoration:none}
     <small style="color:var(--mute)">+ ডেলিভারি চার্জ</small>
     <div class="timer"><div><b id="tH">05</b><span>ঘণ্টা</span></div><div><b id="tM">42</b><span>মিনিট</span></div><div><b id="tS">19</b><span>সেকেন্ড</span></div></div>
     <a href="#order" class="btn btn-gold" style="width:100%">অর্ডার নিশ্চিত করুন</a>
+    <button type="button" class="btn btn-o2" onclick="addToCart()" style="width:100%;margin-top:10px"><span class="bi"><svg viewBox="0 0 24 24"><path d="M7 18a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 007 17h12v-2H7.4l1.1-2h7.5a2 2 0 001.8-1l3.6-6.5A1 1 0 0020.5 4H5.2l-.9-2H1z"/></svg></span>কার্টে যোগ করুন</button>
   </div>
 </div>
 </section>
@@ -506,6 +546,7 @@ a#up{display:grid;place-items:center;text-decoration:none}
     <div><span>অফার মূল্য</span><b>৳490 (রেগুলার ৳750)</b></div>
     <div><span>পেমেন্ট</span><b>ক্যাশ অন ডেলিভারি</b></div>
   </div>
+  <div style="text-align:center;margin:-8px 0 36px"><button type="button" class="btn btn-o2" onclick="addToCart()"><span class="bi"><svg viewBox="0 0 24 24"><path d="M7 18a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 007 17h12v-2H7.4l1.1-2h7.5a2 2 0 001.8-1l3.6-6.5A1 1 0 0020.5 4H5.2l-.9-2H1z"/></svg></span>কার্টে যোগ করুন</button></div>
   <div class="sec-h"><h2>অর্ডার করবেন যেভাবে</h2></div>
   <div class="pr">
     <div><i>1</i><h3>ফর্ম পূরণ করুন</h3><p>নাম, মোবাইল, ঠিকানা ও কৌটার সংখ্যা দিয়ে অর্ডার কনফার্ম করুন।</p></div>
@@ -580,7 +621,11 @@ a#up{display:grid;place-items:center;text-decoration:none}
   </div>
   <button class="fab-main" aria-label="যোগাযোগ" onclick="document.getElementById('fab').classList.toggle('open')"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 012 2v10a2 2 0 01-2 2H8l-5 4V6a2 2 0 011-1.4A2 2 0 014 4z"/></svg></button>
 </div>
-<div class="mbar"><a href="#order" class="btn">এখনই অর্ডার করুন — ৳490</a></div>
+<div class="mbar"><button type="button" class="btn mc" onclick="addToCart()" aria-label="কার্টে যোগ করুন"><span class="bi" style="margin:0"><svg viewBox="0 0 24 24"><path d="M7 18a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 007 17h12v-2H7.4l1.1-2h7.5a2 2 0 001.8-1l3.6-6.5A1 1 0 0020.5 4H5.2l-.9-2H1z"/></svg></span></button><a href="#order" class="btn">এখনই অর্ডার করুন — ৳490</a></div>
+
+<!-- Cart drawer -->
+<div id="cartOv" class="cov" onclick="closeCart()"></div>
+<aside id="cart" class="cart" aria-label="কার্ট"><div class="ch"><b>আপনার কার্ট</b><button type="button" onclick="closeCart()" aria-label="বন্ধ">×</button></div><div id="cbody"></div></aside>
 
 <!-- Order success modal -->
 <div class="modal" id="okModal"><div class="mbox" style="text-align:center;max-width:420px"><button class="x" onclick="closeM('okModal')" aria-label="বন্ধ">×</button>
@@ -604,7 +649,7 @@ a#up{display:grid;place-items:center;text-decoration:none}
 <div id="admin">
   <div class="a-top">
     <div class="a-brand"><img src="images/logo.png" alt="ANAQAH"><div><b>অর্ডার কন্ট্রোল প্যানেল</b><small class="a-live">লাইভ &bull; প্রতি 30 সেকেন্ডে আপডেট</small></div></div>
-    <div class="a-tb"><button class="a-btn g" onclick="exportCSV()">&darr; CSV</button><button class="a-btn g" onclick="reloadOrders()">&#8635; রিফ্রেশ</button><button class="a-btn r" onclick="adminLogout()">লগআউট</button></div>
+    <div class="a-tb"><button class="a-btn g" onclick="exportCSV()">&darr; CSV</button><button id="rfb" class="a-btn g" onclick="reloadOrders()"><span class="rot">&#8635;</span> রিফ্রেশ</button><button class="a-btn r" onclick="adminLogout()">লগআউট</button></div>
   </div>
   <div id="demo" style="display:none;background:#fff3cd;color:#664d03;padding:10px 16px;font-size:13px">&#9888; এখনও অর্ডার-ডাটাবেস (Google Sheet) যুক্ত হয়নি, তাই অর্ডার শুধু এই ব্রাউজারে জমা হচ্ছে।</div>
   <div class="a-wrap">
@@ -640,6 +685,17 @@ var MAXQ=10;
 function chgQ(d){const q=Math.min(MAXQ,Math.max(1,(+$('q').value||1)+d));$('q').value=q;calc()}
 function calc(){const s=+document.querySelector('input[name=s]:checked').value,q=+$('q').value||1;$('qn').textContent=bn(q);$('sub').textContent='৳'+bn(PRICE*q);$('gt').textContent='৳'+bn(PRICE*q+s)}
 calc();
+var CQ=0;try{CQ=Math.min(MAXQ,Math.max(0,parseInt(localStorage.getItem('anaka_cart'),10)||0))}catch(e){}
+function saveCart(){try{localStorage.setItem('anaka_cart',CQ)}catch(e){}}
+function cartUI(){const bd=$('cbadge');bd.textContent=CQ;bd.style.display=CQ?'grid':'none';
+  $('cbody').innerHTML=CQ?'<div class="ci"><img src="images/product.jpg" alt=""><div><b>অরন্য শোভা Natural Face Pack (50 গ্রাম)</b><small>৳'+PRICE+' প্রতি কৌটা</small><div class="qrow"><div class="qty"><button type="button" onclick="cartQ(-1)" aria-label="কমান">−</button><input value="'+CQ+'" readonly aria-label="পরিমাণ"><button type="button" onclick="cartQ(1)" aria-label="বাড়ান">+</button></div></div><button type="button" class="rm" onclick="cartQ(-99)">কার্ট থেকে সরান</button></div></div><div class="cs"><span>মোট ('+CQ+' কৌটা)</span><span>৳'+(PRICE*CQ)+'</span></div><p class="cn">ডেলিভারি চার্জ (ঢাকার ভিতরে ৳60, বাইরে ৳120) অর্ডার ফর্মে যোগ হবে। পেমেন্ট ক্যাশ অন ডেলিভারি।</p><button type="button" class="btn btn-gold" onclick="checkout()">অর্ডার ফর্মে যান</button>':'<div class="cempty"><div class="big">🛒</div><p>আপনার কার্ট খালি</p><br><button type="button" class="btn btn-gold" onclick="addToCart()">কার্টে যোগ করুন</button></div>'}
+function openCart(){cartUI();$('cart').classList.add('on');$('cartOv').classList.add('on')}
+function closeCart(){$('cart').classList.remove('on');$('cartOv').classList.remove('on')}
+function addToCart(){CQ=Math.min(MAXQ,CQ+1);saveCart();openCart()}
+function cartQ(d){CQ=Math.min(MAXQ,Math.max(0,CQ+d));saveCart();cartUI()}
+function checkout(){if(!CQ)return;$('q').value=CQ;calc();closeCart();$('order').scrollIntoView({behavior:'smooth'})}
+addEventListener('keydown',e=>{if(e.key==='Escape')closeCart()});
+cartUI();if(CQ>0){$('q').value=CQ;calc()}
 function copyMail(b){const t='info@anaqahfashion.com';(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{b.textContent='কপি হয়েছে ✓'}).catch(()=>{prompt('ইমেইল কপি করুন:',t)});setTimeout(()=>b.textContent='কপি করুন',2000)}
 function showOk(o,q){$('okTxt').textContent='ধন্যবাদ '+o.name+'! '+q+' কৌটার অর্ডার (মোট ৳'+o.total+') গ্রহণ করা হয়েছে। আমাদের প্রতিনিধি শীঘ্রই ফোনে নিশ্চিত করবেন।';$('okId').textContent=o.id;$('okWa').href='https://wa.me/8801710371432?text='+encodeURIComponent('আসসালামু আলাইকুম, আমি অর্ডার করেছি। অর্ডার আইডি: '+o.id+', নাম: '+o.name);openM('okModal')}
 async function submitOrder(e){e.preventDefault();const b=e.target.querySelector('.sub'),s=+document.querySelector('input[name=s]:checked').value,q=Math.min(MAXQ,Math.max(1,+$('q').value||1));
@@ -650,14 +706,14 @@ async function submitOrder(e){e.preventDefault();const b=e.target.querySelector(
       let ok=false;for(let i=0;i<4&&!ok;i++){await new Promise(r=>setTimeout(r,1500));try{const d=await api({action:'track',q:o.id});ok=!!d.ok}catch(e){}}
       if(!ok)throw new Error('unconfirmed')}
     else{const l=get();l.unshift(o);put(l)}
-    showOk(o,q);
+    showOk(o,q);CQ=0;saveCart();cartUI();
     $('f').reset();$('q').value=1;$('u').innerHTML='<option value="">আগে জেলা সিলেক্ট করুন</option>';calc();
   }catch(err){alert('দুঃখিত, অর্ডার নিশ্চিত হয়নি। ইন্টারনেট দেখে আবার চেষ্টা করুন অথবা 01710371432 নম্বরে কল করুন।')}
   b.disabled=false;b.textContent='অর্ডার কনফার্ম করুন'}
 async function track(){const q=$('ti').value.trim(),r=$('tr');if(!q)return;r.hidden=false;r.textContent='খোঁজা হচ্ছে...';let f=null;
   try{if(ENDPOINT){const d=await api({action:'track',q});if(d.ok)f=d}else f=get().find(o=>o.id===q||o.phone===q)}catch(e){r.textContent='সংযোগ ব্যর্থ হয়েছে, আবার চেষ্টা করুন।';return}
   r.textContent=f?'আইডি: '+f.id+' — '+f.status+'\nকাস্টমার: '+f.name+'\nমোট: ৳'+bn(f.total):'কোনো তথ্য পাওয়া যায়নি।'}
-async function adminLogin(){const k=$('ap').value;if(!k)return;
+async function _adminLogin(){const k=$('ap').value;if(!k)return;
   try{
     if(ENDPOINT){const d=await api({action:'list',key:k});if(!d.ok){alert('ভুল পাসকোড!');return}KEY=k;ORD=d.orders.reverse()}
     else{if(k!=='1234'){alert('ভুল পাসকোড! (ডেমো মোডে পাসকোড 1234)');return}ORD=get()}
@@ -672,8 +728,10 @@ del:'<svg viewBox="0 0 24 24"><path d="M6 19a2 2 0 002 2h8a2 2 0 002-2V7H6v12zM1
 function toast(m){const t=$('atoast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),4000)}
 function beep(){try{const c=new(window.AudioContext||window.webkitAudioContext)(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=880;g.gain.setValueAtTime(.15,c.currentTime);o.start();o.stop(c.currentTime+.25)}catch(e){}}
 async function fetchOrders(){if(ENDPOINT){const d=await api({action:'list',key:KEY});if(!d.ok)throw 0;return d.orders.reverse()}return get()}
-async function reloadOrders(){try{ORD=await fetchOrders();render();toast('✔ আপডেট হয়েছে')}catch(e){alert('রিফ্রেশ ব্যর্থ হয়েছে।')}}
-async function autoLoad(){if(!$('admin').classList.contains('on'))return;try{const n=await fetchOrders();if(n.length>ORD.length){beep();toast('🔔 নতুন অর্ডার এসেছে!')}ORD=n;render()}catch(e){}}
+var BUSY=0;
+async function adminLogin(){const lb=document.querySelector('#adminModal .btn-g');if(lb.disabled)return;lb.disabled=true;lb.textContent='প্রবেশ করা হচ্ছে...';try{await _adminLogin()}finally{lb.disabled=false;lb.textContent='প্রবেশ করুন'}}
+async function reloadOrders(){const b=$('rfb');b.classList.add('spin');b.disabled=true;try{ORD=await fetchOrders();render();toast('✔ আপডেট হয়েছে')}catch(e){alert('রিফ্রেশ ব্যর্থ হয়েছে, আবার চেষ্টা করুন।')}b.classList.remove('spin');b.disabled=false}
+async function autoLoad(){if(!$('admin').classList.contains('on')||BUSY)return;try{const n=await fetchOrders();if(n.length>ORD.length){beep();toast('🔔 নতুন অর্ডার এসেছে!')}ORD=n;render()}catch(e){}}
 function startAuto(){clearInterval(AT);AT=setInterval(autoLoad,30000)}
 function adminLogout(){clearInterval(AT);KEY='';ORD=[];$('admin').classList.remove('on')}
 function setF(v){FS=v;render()}
@@ -699,29 +757,40 @@ function printSlip(i){const o=ORD[i];if(!o)return;const w=window.open('','_blank
 function exportCSV(){const h=['ID','Date','Name','Phone','District','Upazila','Address','Qty','Shipping','Total','Status'];const q=v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"';
   const rows=ORD.map(o=>[o.id,o.date,o.name,'="'+o.phone+'"',o.district,o.upazila,o.address,o.qty||1,o.shipping,o.total,o.status].map(q).join(','));
   const blob=new Blob(['\uFEFF'+h.map(q).join(',')+'\r\n'+rows.join('\r\n')],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='anaqah-orders.csv';document.body.appendChild(a);a.click();a.remove()}
-async function setS(i,v){const o=ORD[i];try{if(ENDPOINT){const d=await api({action:'update',key:KEY,id:o.id,status:v});if(!d.ok)throw 0}else{const l=get();l[i].status=v;put(l)}o.status=v}catch(e){alert('স্ট্যাটাস পরিবর্তন হয়নি, আবার চেষ্টা করুন।')}render()}
-async function delO(i){if(!confirm('অর্ডারটি মুছবেন?'))return;const o=ORD[i];try{if(ENDPOINT){const d=await api({action:'delete',key:KEY,id:o.id});if(!d.ok)throw 0}else{const l=get();l.splice(i,1);put(l)}ORD.splice(i,1)}catch(e){alert('মোছা যায়নি।')}render()}
+async function setS(i,v){const o=ORD[i];if(!o)return;const old=o.status;o.status=v;render();BUSY++;
+  try{if(ENDPOINT){const d=await api({action:'update',key:KEY,id:o.id,status:v});if(!d.ok)throw 0}else{const l=get(),t=l.find(x=>x.id===o.id);if(t)t.status=v;put(l)}toast('✔ সংরক্ষিত হয়েছে')}
+  catch(e){o.status=old;render();alert('স্ট্যাটাস পরিবর্তন হয়নি, আবার চেষ্টা করুন।')}BUSY--}
+async function delO(i){if(!confirm('অর্ডারটি মুছবেন?'))return;const o=ORD[i];if(!o)return;ORD.splice(i,1);render();BUSY++;
+  try{if(ENDPOINT){const d=await api({action:'delete',key:KEY,id:o.id});if(!d.ok)throw 0}else{put(get().filter(x=>x.id!==o.id))}toast('🗑 মুছে ফেলা হয়েছে')}
+  catch(e){ORD.splice(i,0,o);render();alert('মোছা যায়নি, আবার চেষ্টা করুন।')}BUSY--}
 function checkAdmin(){if(location.hash==='#admin'||location.pathname.replace(/\/+$/,'')==='/admin')openM('adminModal')}
 checkAdmin();addEventListener('hashchange',checkAdmin);
 $('ap').addEventListener('keydown',e=>{if(e.key==='Enter')adminLogin()});
 var h=5,m=42,s=19;setInterval(()=>{s--;if(s<0){s=59;m--}if(m<0){m=59;h--}if(h<0){h=12}$('tH').textContent=bn(String(h).padStart(2,'0'));$('tM').textContent=bn(String(m).padStart(2,'0'));$('tS').textContent=bn(String(s).padStart(2,'0'))},1000);
 
-var REVIEWS=[]; // শুধু আসল ক্রেতার রিভিউ যোগ করুন: {n:'নাম',l:'এলাকা',s:5,t:'রিভিউর লেখা',v:true}  (v:true মানে "যাচাইকৃত ক্রেতা", শুধু সত্যিকারের অর্ডার হলে দিন)
+var REVIEWS=[]; // শুধু আসল ক্রেতার রিভিউ যোগ করুন: {n:'নাম',l:'এলাকা',s:5,t:'রিভিউর লেখা',v:true}  (v:true = "যাচাইকৃত ক্রেতা", শুধু সত্যিকারের অর্ডার হলে দিন)
 (function(){const el=document.getElementById('rvlist');if(!el)return;
  if(!REVIEWS.length){el.className='rev';el.innerHTML='<div class="rv cta"><h3>আপনার অভিজ্ঞতা জানান</h3><p>ANAQAH অরন্য শোভা ব্যবহার করেছেন? আপনার মতামত আমাদের ফেসবুক পেজে বা WhatsApp-এ জানান, আমরা আনন্দিত হব।</p><div class="row2"><a class="btn btn-gold" href="https://www.facebook.com/anaqahfashion.bd" target="_blank" rel="noopener"><span class="bi"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg></span>ফেসবুক পেজে যান</a><a class="btn btn-line" href="https://wa.me/8801710371432" target="_blank" rel="noopener"><span class="bi"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg></span>WhatsApp-এ জানান</a></div></div>';return}
  const n=REVIEWS.length,avg=(REVIEWS.reduce((a,r)=>a+(r.s||5),0)/n).toFixed(1);
- el.className='rvw';
- el.innerHTML='<aside class="rvl"><img src="images/product.jpg" alt="অরন্য শোভা" loading="lazy"><h3>ক্রেতাদের মতামত</h3><div class="big gt">'+avg+' <small>/ 5</small></div><div class="rs">★★★★★</div><p>'+n+' জন ক্রেতার মতামত</p><a href="#order" class="btn btn-gold">আপনিও অর্ডার করুন</a></aside><div class="rvr"></div>';
- const box=el.querySelector('.rvr');
+ el.className='rcw';
+ el.innerHTML='<div class="rsum2"><span class="gt big2">'+avg+'</span><span class="rs">★★★★★</span><span>'+n+' জন ক্রেতার মতামত</span></div><div class="rcar"><button type="button" class="rnav prev" aria-label="আগের">&#8249;</button><div class="rtrack"></div><button type="button" class="rnav next" aria-label="পরের">&#8250;</button></div>';
+ const tr=el.querySelector('.rtrack');
  REVIEWS.forEach(r=>{const c=document.createElement('div');c.className='rvc';
   c.innerHTML='<div class="rtop"><div class="av"></div><div class="who"><b></b><small></small></div><span class="vb"></span></div><div class="st"></div><p></p>';
   c.querySelector('.av').textContent=[...r.n][0];c.querySelector('b').textContent=r.n;c.querySelector('small').textContent=r.l||'';
   if(r.v)c.querySelector('.vb').textContent='✔ যাচাইকৃত ক্রেতা';
-  c.querySelector('.st').textContent='★'.repeat(r.s||5)+'☆'.repeat(5-(r.s||5));c.querySelector('p').textContent=r.t;box.appendChild(c)})
+  c.querySelector('.st').textContent='★'.repeat(r.s||5)+'☆'.repeat(5-(r.s||5));c.querySelector('p').textContent=r.t;tr.appendChild(c)});
+ let t;const cw=()=>(tr.children[0]?tr.children[0].getBoundingClientRect().width:0)+16;
+ const step=d=>{if(d>0&&tr.scrollLeft+tr.clientWidth>=tr.scrollWidth-6)tr.scrollTo({left:0,behavior:'smooth'});else if(d<0&&tr.scrollLeft<=2)tr.scrollTo({left:tr.scrollWidth,behavior:'smooth'});else tr.scrollBy({left:d*cw(),behavior:'smooth'})};
+ const start=()=>{clearInterval(t);if(tr.scrollWidth>tr.clientWidth+8)t=setInterval(()=>step(1),4500)};
+ el.querySelector('.prev').onclick=()=>{step(-1);start()};el.querySelector('.next').onclick=()=>{step(1);start()};
+ tr.addEventListener('mouseenter',()=>clearInterval(t));tr.addEventListener('mouseleave',start);
+ tr.addEventListener('touchstart',()=>clearInterval(t),{passive:true});tr.addEventListener('touchend',()=>setTimeout(start,3500));
+ start();
 })();
 (function(){
 document.documentElement.classList.add('js');
-var els=[...document.querySelectorAll('.sec-h,.ben,.chip,.step,.tips,.rv,details,.cmp>div,.sg>div,.pr>div,.spec,.form,.rvl,.rvc,.banner,.ct-l,.ct-r li,.fcol,.stats .wrap>div')];
+var els=[...document.querySelectorAll('.sec-h,.ben,.chip,.step,.tips,.rv,details,.cmp>div,.sg>div,.pr>div,.spec,.form,.rcw,.banner,.ct-l,.ct-r li,.fcol,.stats .wrap>div')];
 els.forEach(e=>e.classList.add('reveal'));
 var io=new IntersectionObserver(en=>en.forEach(x=>{if(!x.isIntersecting)return;const e=x.target,i=[...e.parentNode.children].indexOf(e);e.style.transitionDelay=Math.min(i,6)*110+'ms';e.classList.add('in');setTimeout(()=>{e.style.transitionDelay=''},1400);io.unobserve(e)}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
 els.forEach(e=>io.observe(e));
