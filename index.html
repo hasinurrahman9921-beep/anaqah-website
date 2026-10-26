@@ -253,9 +253,123 @@ footer{background:#06180f;color:#9db5a8;padding:52px 0 22px;text-align:left;font
 .fb{border-top:1px solid rgba(255,255,255,.1);margin-top:32px;padding-top:18px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13.5px}
 @media(max-width:760px){.fg{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.gt,.eyebrow{animation:none!important}}
+
+/* ===== admin v2 ===== */
+#admin{background:#eef2ef}
+.a-top{background:linear-gradient(135deg,#0a2e22,#14573f);color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;position:sticky;top:0;z-index:5;box-shadow:0 6px 20px rgba(0,0,0,.22);flex-wrap:wrap}
+.a-brand{display:flex;align-items:center;gap:12px}.a-brand img{height:40px;width:auto}
+.a-brand b{display:block;font-size:17px;line-height:1.2}
+.a-live{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:#bfe3cf}
+.a-live::before{content:"";width:8px;height:8px;border-radius:50%;background:#3ddc84;animation:apulse 1.6s infinite}
+@keyframes apulse{0%{box-shadow:0 0 0 0 rgba(61,220,132,.6)}100%{box-shadow:0 0 0 10px rgba(61,220,132,0)}}
+.a-tb{display:flex;gap:8px}
+.a-btn{border:0;border-radius:10px;padding:8px 14px;font:600 14px 'Hind Siliguri',sans-serif;cursor:pointer;transition:.2s}
+.a-btn.g{background:rgba(255,255,255,.14);color:#fff}.a-btn.g:hover{background:rgba(255,255,255,.26)}
+.a-btn.r{background:#c0392b;color:#fff}.a-btn.r:hover{background:#a53125}
+.a-wrap{max-width:1180px;margin:0 auto;padding:22px 16px 60px}
+.a-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.a-sc{background:#fff;border-radius:18px;padding:18px;display:flex;gap:14px;align-items:center;box-shadow:0 6px 20px rgba(10,46,34,.07);border:1px solid #e3eae6;position:relative;overflow:hidden}
+.a-sc::after{content:"";position:absolute;right:-28px;top:-28px;width:96px;height:96px;border-radius:50%;background:var(--c);opacity:.12}
+.a-ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:22px;background:var(--c);flex:none}
+.a-sc small{color:#5d6b64;font-size:13.5px;display:block}
+.a-sc b{font-size:28px;color:#0a2e22;line-height:1.15;display:block}
+.a-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.a-search{flex:1;min-width:240px;position:relative}
+.a-search input{width:100%;padding:12px 14px 12px 42px;border-radius:12px;border:1px solid #d4ddd8;background:#fff;font:inherit}
+.a-search::before{content:"\1F50D";position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:15px}
+.a-chips{display:flex;gap:8px;flex-wrap:wrap}
+.a-chip{border:1px solid #d4ddd8;background:#fff;border-radius:99px;padding:7px 14px;font:600 14px 'Hind Siliguri',sans-serif;cursor:pointer;color:#33443c;transition:.2s}
+.a-chip:hover{border-color:#14573f}
+.a-chip.on{background:#14573f;color:#fff;border-color:#14573f}
+.a-chip em{font-style:normal;opacity:.75;margin-left:5px}
+.a-card{display:grid;grid-template-columns:auto 1.7fr 1.1fr 1.3fr;gap:16px;align-items:center;background:#fff;border:1px solid #e3eae6;border-left:5px solid var(--sc,#d28a17);border-radius:18px;padding:16px 18px;margin-bottom:12px;box-shadow:0 4px 14px rgba(10,46,34,.05);transition:box-shadow .25s,transform .25s}
+.a-card:hover{box-shadow:0 14px 30px rgba(10,46,34,.13);transform:translateY(-2px)}
+.a-av{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#c9923a,#f3d9a4);color:#2a1d05;font:700 20px 'Hind Siliguri',sans-serif;display:grid;place-items:center}
+.a-main b{display:block;font-size:16.5px;color:#0a2e22}
+.a-main span{display:block;color:#33443c;font-weight:600}
+.a-main small{display:block;color:#5d6b64;font-size:13.5px;line-height:1.45;margin-top:2px}
+.a-meta{display:flex;gap:22px;align-items:center}
+.a-id{font-weight:700;color:#14573f;font-size:14.5px}.a-id small{display:block;color:#6b7a72;font-weight:400;font-size:12.5px}
+.a-amt{font-weight:700;font-size:21px;color:#0a2e22}.a-amt small{display:block;font-size:12.5px;font-weight:500;color:#6b7a72}
+.a-act{display:flex;flex-direction:column;gap:9px;align-items:flex-end}
+.a-st{padding:8px 14px;border-radius:99px;border:0;font:700 13.5px 'Hind Siliguri',sans-serif;cursor:pointer;min-width:134px}
+.st-p{background:#fff3d6;color:#8a5a00}.st-c{background:#dfeaff;color:#1d4fa8}.st-d{background:#d9f4e5;color:#0f6b43}.st-x{background:#fde1de;color:#a23a2c}
+.a-btns{display:flex;gap:8px}
+.a-ib{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;border:1px solid #d4ddd8;background:#fff;cursor:pointer;color:#14573f;transition:.2s;padding:0}
+.a-ib svg{width:18px;height:18px;fill:currentColor}
+.a-ib:hover{background:#14573f;color:#fff;border-color:#14573f}
+.a-ib.wa{color:#1da851}.a-ib.wa:hover{background:#1da851;color:#fff;border-color:#1da851}
+.a-ib.del:hover{background:#c0392b;border-color:#c0392b;color:#fff}
+.a-empty{text-align:center;color:#6b7a72;padding:54px 10px;background:#fff;border-radius:18px;border:1px dashed #cdd8d2}
+#atoast{position:fixed;top:84px;right:18px;background:#0a2e22;color:#f3d9a4;padding:12px 18px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.3);z-index:90;transform:translateX(140%);transition:transform .4s;font-weight:600}
+#atoast.on{transform:none}
+@media(max-width:900px){.a-stats{grid-template-columns:1fr 1fr}.a-card{grid-template-columns:auto 1fr}.a-meta{grid-column:1/-1;justify-content:space-between}.a-act{grid-column:1/-1;flex-direction:row;justify-content:space-between;align-items:center}}
+@media(max-width:480px){.a-sc{padding:14px}.a-sc b{font-size:24px}.a-ic{width:40px;height:40px}}
+
+/* ===== v6 smooth + icons ===== */
+html{scroll-padding-top:84px}
+.js .reveal{opacity:0;transform:translateY(46px) scale(.96);filter:blur(6px);transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1),filter .9s cubic-bezier(.22,1,.36,1)}
+.js .reveal.in{opacity:1;transform:none;filter:none;transition:opacity 1s cubic-bezier(.22,1,.36,1),transform .4s cubic-bezier(.22,1,.36,1),filter .6s,box-shadow .4s,border-color .3s}
+.js .cmp>div:first-child.reveal,.js .sg>div:first-child.reveal{transform:translateX(-50px) scale(.97)}
+.js .cmp>div:last-child.reveal,.js .sg>div:last-child.reveal{transform:translateX(50px) scale(.97)}
+.js .cmp>div.reveal.in,.js .sg>div.reveal.in{transform:none}
+.js .sec-h.reveal{transform:translateY(30px);filter:none}
+@keyframes rise{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+.hero .wrap>div:first-child>*{animation:rise 1.1s cubic-bezier(.22,1,.36,1) both}
+.hero .wrap>div:first-child>*:nth-child(2){animation-delay:.12s}.hero .wrap>div:first-child>*:nth-child(3){animation-delay:.24s}
+.hero .wrap>div:first-child>*:nth-child(4){animation-delay:.36s}.hero .wrap>div:first-child>*:nth-child(5){animation-delay:.48s}
+.hero .wrap>div:last-child{animation:rise 1.3s .25s cubic-bezier(.22,1,.36,1) both}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(-40px,-30px)}}
+.hero::before{animation:drift 14s ease-in-out infinite}
+.hero::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(47,138,100,.35),transparent 65%);right:-120px;bottom:-140px;animation:drift 18s ease-in-out infinite reverse}
+.strip{overflow:hidden;padding:13px 0}
+.mq{overflow:hidden}.mt{display:flex;width:max-content;animation:mq 34s linear infinite}
+.mt span{padding-right:46px;white-space:nowrap}
+.strip:hover .mt{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+#benefits,#safety,#process{position:relative}
+#benefits::before,#safety::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(201,146,58,.14),transparent 65%);top:20px;right:-100px;pointer-events:none}
+a#up{display:grid;place-items:center;text-decoration:none}
+.fab-list a{display:flex;align-items:center;gap:10px;padding:6px 18px 6px 6px;color:var(--ink);background:#fff;transition:transform .25s,box-shadow .25s}
+.fab-list a:hover{transform:translateX(-4px);box-shadow:0 10px 22px rgba(0,0,0,.2)}
+.fi{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;flex:none}
+.fi svg{width:18px;height:18px;fill:#fff}
+.fab-main{display:grid;place-items:center;transition:transform .3s}.fab-main:hover{transform:scale(1.08) rotate(-6deg)}
+.fab-main svg{width:28px;height:28px;fill:#fff}
+.bi{display:inline-block;width:18px;height:18px;margin-right:9px;vertical-align:-3px}.bi svg{width:18px;height:18px;fill:currentColor}
+.ct-btns .btn{display:inline-flex;align-items:center}
+.fcol a.ic{display:flex;align-items:center;gap:11px}
+.fcol a.ic span{display:grid;place-items:center;width:20px;flex:none}.fcol a.ic svg{width:18px;height:18px;fill:currentColor}
+.rv .nm{display:flex;align-items:center;gap:10px;margin-top:10px}
+.rv .av{width:38px;height:38px;border-radius:50%;background:var(--goldg);color:#2a1d05;display:grid;place-items:center;font-weight:700}
+.rv .nm b{display:block;color:var(--g9);font-size:14.5px}.rv .nm small{color:var(--mute);font-size:12.5px}
+.rv.cta{grid-column:1/-1;text-align:center;padding:34px 22px;background:linear-gradient(150deg,#0f4533,#071f17);color:#e3efe8;border-color:rgba(243,217,164,.3)}
+.rv.cta h3{color:#fff;font-size:22px;margin-bottom:6px}.rv.cta p{color:#c5dccf;font-size:15.5px}
+.rv.cta .row2{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+@media(prefers-reduced-motion:reduce){.mt,.hero::before,.hero::after,.hero .wrap>div{animation:none!important}}
+
+.rvw{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;max-width:1000px;margin:0 auto;align-items:start}
+.rvl{background:linear-gradient(150deg,#0f4533,#071f17);color:#e3efe8;border-radius:22px;padding:22px;position:sticky;top:96px;border:1px solid rgba(243,217,164,.3);text-align:center}
+.rvl img{width:100%;height:auto;border-radius:14px;margin-bottom:14px}
+.rvl h3{color:#fff;font-size:20px}.rvl .big{font-size:44px;font-weight:700;line-height:1.2}.rvl .big small{font-size:16px;color:#c5dccf;-webkit-text-fill-color:#c5dccf}
+.rvl .rs{color:#f3d9a4;letter-spacing:3px;font-size:20px}.rvl p{color:#c5dccf;margin:4px 0 16px}
+.rvr{display:grid;gap:12px;max-height:600px;overflow:auto;padding:2px 6px 2px 2px}
+.rvc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.rvc .rtop{display:flex;align-items:center;gap:12px}
+.rvc .av{width:42px;height:42px;border-radius:50%;background:var(--goldg);color:#2a1d05;display:grid;place-items:center;font-weight:700;flex:none}
+.rvc .who b{display:block;color:var(--g9)}.rvc .who small{color:var(--mute);font-size:13px}
+.rvc .vb{margin-left:auto;font-size:12px;font-weight:600;background:#e3f6ea;color:#0f6b43;border-radius:99px;padding:3px 10px}
+.rvc .vb:empty{display:none}
+.rvc .st{color:var(--gold);letter-spacing:2px;margin:8px 0 2px}.rvc p{font-size:15.5px;color:var(--ink)}
+@media(max-width:820px){.rvw{grid-template-columns:1fr}.rvl{position:static}.rvr{max-height:none}}
+.okc{width:74px;height:74px;margin:0 auto 12px;border-radius:50%;background:linear-gradient(135deg,#1b6b4e,#0f4533);color:#fff;display:grid;place-items:center;font-size:38px;animation:pop .6s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+.okid{background:var(--g1);border-radius:12px;padding:10px;margin:12px 0 16px;font-size:15.5px}.okid b{color:var(--g9);letter-spacing:.04em}
+.okb{display:grid;gap:10px}.okb .btn{width:100%;text-align:center}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"ANAQAH অরন্য শোভা Natural Face Pack","brand":{"@type":"Brand","name":"ANAQAH Beauty Care"},"description":"মূলতানি মাটি, সাদা চন্দন, হলুদ, বেসন ও অ্যালোভেরাসহ ৯টি ভেষজ উপাদানের ফেস প্যাক, ৫০ গ্রাম।","image":"images/product.jpg","offers":{"@type":"Offer","priceCurrency":"BDT","price":"490","availability":"https://schema.org/InStock"}}</script>
 </head>
-<body>
+<body id="top">
 <div id="pg"></div>
 
 <div class="top">🌿 স্টক সীমিত — আজই অর্ডার করুন, পণ্য হাতে পেয়ে মূল্য পরিশোধ করুন (ক্যাশ অন ডেলিভারি)</div>
@@ -273,7 +387,7 @@ footer{background:#06180f;color:#9db5a8;padding:52px 0 22px;text-align:left;font
   <div>
     <span class="tag">100% প্রাকৃতিক ভেষজ ফর্মুলা</span>
     <h1>ব্রণের দাগ ও তৈলাক্ত ভাব কমিয়ে ফিরে পান <span class="gt">উজ্জ্বল, প্রাণবন্ত ত্বক</span></h1>
-    <p class="lead">ঘিলাফলের শ্বাস, সোহাগা, ফিটকারি, হলুদ মাটি, কাঁচা হলুদ, মসুর ডাল বেসন, অ্যালোভেরা ও সাদা চন্দনের সংমিশ্রণে তৈরি ANAQAH অর্গানিক হারবাল ফেস প্যাক — নিয়মিত ব্যবহারে ত্বক হয় পরিষ্কার ও সতেজ।</p>
+    <p class="lead">মূলতানি মাটি, সাদা চন্দন, হলুদ, বেসন ও অ্যালোভেরার সংমিশ্রণে তৈরি ANAQAH অর্গানিক হারবাল ফেস প্যাক — নিয়মিত ব্যবহারে ত্বক হয় পরিষ্কার ও সতেজ।</p>
     <div class="cta"><a href="#order" class="btn btn-gold">এখনই অর্ডার করুন</a><a href="#benefits" class="btn btn-line">উপকারিতা দেখুন</a></div>
     <div class="trust"><span>✔ ক্যাশ অন ডেলিভারি</span><span>✔ সারা দেশে ডেলিভারি</span><span>✔ প্রাকৃতিক উপাদান</span></div>
   </div>
@@ -289,7 +403,7 @@ footer{background:#06180f;color:#9db5a8;padding:52px 0 22px;text-align:left;font
 </div>
 </section>
 
-<div class="strip"><div class="wrap"><span>✔ ক্যাশ অন ডেলিভারি</span><span>✔ সারা দেশে ডেলিভারি</span><span>✔ সব ধরনের ত্বকের জন্য উপযোগী</span><span>✔ সহজ অর্ডার, ফোনে নিশ্চিতকরণ</span></div></div>
+<div class="strip"><div class="mq"><div class="mt"><span>✦ ক্যাশ অন ডেলিভারি</span><span>✦ সারা দেশে ডেলিভারি</span><span>✦ সব ধরনের ত্বকের জন্য উপযোগী</span><span>✦ ৯টি প্রাকৃতিক ভেষজ উপাদান</span><span>✦ সহজ অর্ডার, ফোনে নিশ্চিতকরণ</span><span>✦ ক্যাশ অন ডেলিভারি</span><span>✦ সারা দেশে ডেলিভারি</span><span>✦ সব ধরনের ত্বকের জন্য উপযোগী</span><span>✦ ৯টি প্রাকৃতিক ভেষজ উপাদান</span><span>✦ সহজ অর্ডার, ফোনে নিশ্চিতকরণ</span></div></div></div>
 
 <div class="stats"><div class="wrap">
   <div><b><em data-n="9">0</em>টি</b><span>ভেষজ উপাদান</span></div>
@@ -362,13 +476,9 @@ footer{background:#06180f;color:#9db5a8;padding:52px 0 22px;text-align:left;font
   <p class="disc">এটি একটি প্রসাধনী পণ্য, কোনো রোগের চিকিৎসা নয়। ফলাফল ত্বকের ধরন ও নিয়মিত ব্যবহারের উপর নির্ভর করে।</p>
 </div></section>
 
-<section style="background:var(--g1)"><div class="wrap">
-  <div class="sec-h"><h2>ব্যবহারকারীদের অভিজ্ঞতা</h2><p>নিচের রিভিউগুলো নমুনা; প্রকাশের আগে আপনার আসল কাস্টমার রিভিউ দিয়ে বদলে নিন।</p></div>
-  <div class="rev">
-    <div class="rv"><div class="st">★★★★★</div><p>"আমি দুই সপ্তাহ ধরে ব্যবহার করছি। রোদে পোড়া দাগগুলো অনেকটাই হালকা হয়ে গেছে আর মুখটা বেশ ফ্রেশ লাগে। কোনো জ্বালাপোড়া নেই!"</p><b>— নমুনা রিভিউ</b></div>
-    <div class="rv"><div class="st">★★★★★</div><p>"অয়েলি স্কিনের জন্য দারুণ কার্যকরী। ফেস প্যাকটা ধোয়ার পর স্কিনে আলাদা একটা স্মুথনেস আসে। ৪৯০ টাকায় দারুণ কোয়ালিটি!"।</p><b>— নমুনা রিভিউ</b></div>
-    <div class="rv"><div class="st">★★★★☆</div><p>"প্রোডাক্টের প্যাকেজিং ও কোয়ালিটি দুইটাই পছন্দ হয়েছে। সবচেয়ে ভালো লেগেছে এটা কেমিক্যালমুক্ত ন্যাচারাল উপাদান দিয়ে তৈরি।"</p><b>— নমুনা রিভিউ</b></div>
-  </div>
+<section id="reviews" style="background:var(--g1)"><div class="wrap">
+  <div class="sec-h"><span class="eyebrow">ক্রেতাদের মতামত</span><h2>ব্যবহারকারীদের অভিজ্ঞতা</h2></div>
+  <div class="rev" id="rvlist"></div>
 </div></section>
 
 <section id="faq"><div class="wrap">
@@ -440,7 +550,7 @@ footer{background:#06180f;color:#9db5a8;padding:52px 0 22px;text-align:left;font
     <span class="eyebrow gt">যোগাযোগ</span>
     <h2>আমরা আছি আপনার পাশে</h2>
     <p>পণ্য, ব্যবহার বা অর্ডার সংক্রান্ত যেকোনো প্রশ্নে সরাসরি আমাদের জানান।</p>
-    <div class="ct-btns"><a class="btn btn-gold" href="https://wa.me/8801710371432" target="_blank" rel="noopener">WhatsApp-এ মেসেজ</a><a class="btn btn-line" href="tel:+8801710371432">কল করুন</a></div>
+    <div class="ct-btns"><a class="btn btn-gold" href="https://wa.me/8801710371432" target="_blank" rel="noopener"><span class="bi"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg></span>WhatsApp-এ মেসেজ</a><a class="btn btn-line" href="tel:+8801710371432"><span class="bi"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.6 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.6 3.6a1 1 0 01-.25 1z"/></svg></span>কল করুন</a><a class="btn btn-line" href="https://www.facebook.com/anaqahfashion.bd" target="_blank" rel="noopener"><span class="bi"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg></span>Facebook</a></div>
   </div>
   <ul class="ct-r">
     <li><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.6 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.6 3.6a1 1 0 01-.25 1z"/></svg></i><div><small>ফোন / WhatsApp</small><a href="tel:+8801710371432">01710371432</a></div></li>
@@ -454,23 +564,29 @@ footer{background:#06180f;color:#9db5a8;padding:52px 0 22px;text-align:left;font
     <div class="fcol"><img src="images/logo.png" alt="ANAQAH Beauty Care" style="height:64px;width:auto;margin-bottom:10px"><p>ত্বকের সুরক্ষায় প্রাকৃতিক ও খাঁটি ভেষজ উপাদানের প্রতিশ্রুতি।</p>
       <div class="soc"><a href="https://www.facebook.com/anaqahfashion.bd" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg></a><a href="https://wa.me/8801710371432" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg></a><a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@anaqahfashion.com" target="_blank" rel="noopener" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5z"/></svg></a></div></div>
     <div class="fcol"><h4>দ্রুত লিংক</h4><a href="#benefits">উপকারিতা</a><a href="#ingredients">উপাদান</a><a href="#usage">ব্যবহারের নিয়ম</a><a href="#faq">প্রশ্নোত্তর</a><a href="#order">অর্ডার করুন</a></div>
-    <div class="fcol"><h4>যোগাযোগ</h4><a href="tel:+8801710371432">01710371432</a><a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@anaqahfashion.com" target="_blank" rel="noopener">info@anaqahfashion.com</a><a href="https://www.facebook.com/anaqahfashion.bd" target="_blank" rel="noopener">facebook.com/anaqahfashion.bd</a></div>
+    <div class="fcol"><h4>যোগাযোগ</h4><a class="ic" href="tel:+8801710371432"><span style="color:#f3d9a4"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.6 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.6 3.6a1 1 0 01-.25 1z"/></svg></span>01710371432</a><a class="ic" href="https://wa.me/8801710371432" target="_blank" rel="noopener"><span style="color:#25d366"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg></span>WhatsApp মেসেজ</a><a class="ic" href="https://mail.google.com/mail/?view=cm&fs=1&to=info@anaqahfashion.com" target="_blank" rel="noopener"><span><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M2 8v10a2 2 0 002 2h3V10z"/><path fill="#34A853" d="M22 8v10a2 2 0 01-2 2h-3V10z"/><path fill="#EA4335" d="M2 6a2 2 0 013-1.7L12 9.5l7-5.2A2 2 0 0122 6v2l-10 7.5L2 8z"/><path fill="#FBBC04" d="M17 4.3V10l5-2V6a2 2 0 00-3-1.7z"/></svg></span>info@anaqahfashion.com</a><a class="ic" href="https://www.facebook.com/anaqahfashion.bd" target="_blank" rel="noopener"><span style="color:#4c8dff"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg></span>facebook.com/anaqahfashion.bd</a></div>
   </div>
   <div class="fb"><span>&copy; 2026 ANAQAH Beauty Care. সর্বস্বত্ব সংরক্ষিত।</span><span>ক্যাশ অন ডেলিভারি &bull; সারা দেশে</span></div>
 </div></footer>
 
-<button id="up" aria-label="উপরে যান" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+<a id="up" href="#top" aria-label="উপরে যান">↑</a>
 <!-- Floating contact -->
 <div class="fab" id="fab">
   <div class="fab-list">
-    <a href="tel:+8801710371432">📞 01710371432</a>
-    <a class="wa" href="https://wa.me/8801710371432" target="_blank" rel="noopener">💬 হোয়াটসঅ্যাপ করুন</a>
-    <a href="#contact" onclick="document.getElementById('fab').classList.remove('open')">✉️ ইমেইল করুন</a>
-    <a href="https://www.facebook.com/anaqahfashion.bd" target="_blank" rel="noopener">📘 ফেসবুক পেজ</a>
+    <a href="tel:+8801710371432"><span class="fi" style="background:#14573f"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.6 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.6 3.6a1 1 0 01-.25 1z"/></svg></span>কল করুন</a>
+    <a href="https://wa.me/8801710371432" target="_blank" rel="noopener"><span class="fi" style="background:#25a244"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg></span>WhatsApp</a>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@anaqahfashion.com" target="_blank" rel="noopener"><span class="fi" style="background:#fff;border:1px solid #e6e2d6"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M2 8v10a2 2 0 002 2h3V10z"/><path fill="#34A853" d="M22 8v10a2 2 0 01-2 2h-3V10z"/><path fill="#EA4335" d="M2 6a2 2 0 013-1.7L12 9.5l7-5.2A2 2 0 0122 6v2l-10 7.5L2 8z"/><path fill="#FBBC04" d="M17 4.3V10l5-2V6a2 2 0 00-3-1.7z"/></svg></span>Gmail</a>
+    <a href="https://www.facebook.com/anaqahfashion.bd" target="_blank" rel="noopener"><span class="fi" style="background:#1877f2"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg></span>Facebook</a>
   </div>
-  <button class="fab-main" aria-label="যোগাযোগ" onclick="document.getElementById('fab').classList.toggle('open')">💬</button>
+  <button class="fab-main" aria-label="যোগাযোগ" onclick="document.getElementById('fab').classList.toggle('open')"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 012 2v10a2 2 0 01-2 2H8l-5 4V6a2 2 0 011-1.4A2 2 0 014 4z"/></svg></button>
 </div>
 <div class="mbar"><a href="#order" class="btn">এখনই অর্ডার করুন — ৳490</a></div>
+
+<!-- Order success modal -->
+<div class="modal" id="okModal"><div class="mbox" style="text-align:center;max-width:420px"><button class="x" onclick="closeM('okModal')" aria-label="বন্ধ">×</button>
+  <div class="okc">✓</div><h3>অর্ডার সফল হয়েছে!</h3><p id="okTxt" style="color:var(--mute);font-size:15.5px"></p>
+  <div class="okid">অর্ডার আইডি: <b id="okId"></b></div>
+  <div class="okb"><a id="okWa" class="btn btn-gold" target="_blank" rel="noopener">WhatsApp-এ নিশ্চিত করুন</a><button class="btn btn-g" onclick="closeM('okModal')">বন্ধ করুন</button></div></div></div>
 
 <!-- Track modal -->
 <div class="modal" id="trackModal"><div class="mbox"><button class="x" onclick="closeM('trackModal')" aria-label="বন্ধ">×</button>
@@ -486,30 +602,46 @@ footer{background:#06180f;color:#9db5a8;padding:52px 0 22px;text-align:left;font
   <button class="btn btn-g" style="width:100%;margin-top:10px" onclick="adminLogin()">প্রবেশ করুন</button></div></div>
 
 <div id="admin">
-  <div class="ah"><b>ANAQAH – অর্ডার কন্ট্রোল প্যানেল</b><span><button onclick="reloadOrders()" style="background:#2f8a64;color:#fff;border:0;border-radius:6px;padding:4px 12px;cursor:pointer;margin-right:8px">রিফ্রেশ</button><button onclick="document.getElementById('admin').classList.remove('on')" style="background:#c0392b;color:#fff;border:0;border-radius:6px;padding:4px 12px;cursor:pointer">লগআউট</button></span></div>
-  <div id="demo" style="display:none;background:#fff3cd;color:#664d03;padding:10px 16px;font-size:13px">⚠ এখনও অর্ডার-ডাটাবেস (Google Sheet) যুক্ত হয়নি, তাই অর্ডার শুধু এই ব্রাউজারে জমা হচ্ছে। সেটআপ গাইড অনুযায়ী ENDPOINT বসান।</div>
-  <div class="ast"><div>মোট অর্ডার<b id="s1">0</b></div><div>পেন্ডিং<b id="s2">0</b></div><div>কনফার্মড<b id="s3">0</b></div><div>ডেলিভারিড আয়<b id="s4">৳0</b></div></div>
-  <div class="tw"><table><thead><tr><th>আইডি</th><th>কাস্টমার</th><th>ঠিকানা</th><th>মোট</th><th>স্ট্যাটাস</th><th></th></tr></thead><tbody id="tb"></tbody></table></div>
+  <div class="a-top">
+    <div class="a-brand"><img src="images/logo.png" alt="ANAQAH"><div><b>অর্ডার কন্ট্রোল প্যানেল</b><small class="a-live">লাইভ &bull; প্রতি 30 সেকেন্ডে আপডেট</small></div></div>
+    <div class="a-tb"><button class="a-btn g" onclick="exportCSV()">&darr; CSV</button><button class="a-btn g" onclick="reloadOrders()">&#8635; রিফ্রেশ</button><button class="a-btn r" onclick="adminLogout()">লগআউট</button></div>
+  </div>
+  <div id="demo" style="display:none;background:#fff3cd;color:#664d03;padding:10px 16px;font-size:13px">&#9888; এখনও অর্ডার-ডাটাবেস (Google Sheet) যুক্ত হয়নি, তাই অর্ডার শুধু এই ব্রাউজারে জমা হচ্ছে।</div>
+  <div class="a-wrap">
+    <div class="a-stats">
+      <div class="a-sc" style="--c:#14573f"><div class="a-ic">&#129534;</div><div><small>মোট অর্ডার</small><b id="s1">0</b><small id="s5"></small></div></div>
+      <div class="a-sc" style="--c:#d28a17"><div class="a-ic">&#9203;</div><div><small>পেন্ডিং</small><b id="s2">0</b></div></div>
+      <div class="a-sc" style="--c:#2b6fd6"><div class="a-ic">&#9989;</div><div><small>কনফার্মড</small><b id="s3">0</b></div></div>
+      <div class="a-sc" style="--c:#1e9e6a"><div class="a-ic">&#128176;</div><div><small>ডেলিভারিড আয়</small><b id="s4">৳0</b></div></div>
+    </div>
+    <div class="a-bar">
+      <div class="a-search"><input id="fq" placeholder="নাম, ফোন, আইডি বা এলাকা দিয়ে খুঁজুন..." oninput="FQ=this.value.trim().toLowerCase();render()"></div>
+      <div class="a-chips" id="fchips"></div>
+    </div>
+    <div id="list"></div>
+  </div>
+  <div id="atoast"></div>
 </div>
 
 <script>
-const LOC={"পাবনা":["পাবনা সদর","চাটমোহর","ঈশ্বরদী","ভাঙ্গুড়া","ফরিদপুর","সাঁথিয়া","বেড়া","সুজানগর","আটঘরিয়া"],"ঢাকা":["মিরপুর","ধানমন্ডি","উত্তরা","গুলশান","মোহাম্মদপুর","সাভার","কেরানীগঞ্জ"],"গাজীপুর":["গাজীপুর সদর","টঙ্গী","কালিয়াকৈর"],"নারায়ণগঞ্জ":["নারায়ণগঞ্জ সদর","সোনারগাঁও","রূপগঞ্জ"],"রাজশাহী":["বোয়ালিয়া","পবা","বাগমারা","পুঠিয়া","গোদাগাড়ী","তানোর"],"বগুড়া":["বগুড়া সদর","শেরপুর","শিবগঞ্জ","ধুনট","গাবতলী"],"নাটোর":["নাটোর সদর","সিংড়া","বড়াইগ্রাম","গুরুদাসপুর","লালপুর"],"সিরাজগঞ্জ":["সিরাজগঞ্জ সদর","শাহজাদপুর","উল্লাপাড়া","বেলকুচি","কাজিপুর"],"চট্টগ্রাম":["কোতোয়ালী","পতেঙ্গা","হালিশহর","হাটহাজারী","পটিয়া","সীতাকুণ্ড"],"সিলেট":["সিলেট সদর","গোলাপগঞ্জ","জকিগঞ্জ","বিয়ানীবাজার"]};
-const ENDPOINT="https://script.google.com/macros/s/AKfycbwYT2CZJIXMDl1wh1f480-suFOGzoutg8TEznA_RIzrtUlocEw3yR_2x6Ucs6XSz-9j/exec"; // এখানে Google Apps Script-এর Web App URL বসান (সেটআপ গাইড দেখুন)
-const PRICE=490,$=id=>document.getElementById(id);
-const bn=n=>String(n);
-const get=()=>{try{return JSON.parse(localStorage.getItem('anaka_orders')||'[]')}catch(e){return[]}};
-const put=o=>{try{localStorage.setItem('anaka_orders',JSON.stringify(o))}catch(e){}};
-let KEY='',ORD=[];
+var LOC={"পাবনা":["পাবনা সদর","চাটমোহর","ঈশ্বরদী","ভাঙ্গুড়া","ফরিদপুর","সাঁথিয়া","বেড়া","সুজানগর","আটঘরিয়া"],"ঢাকা":["মিরপুর","ধানমন্ডি","উত্তরা","গুলশান","মোহাম্মদপুর","সাভার","কেরানীগঞ্জ"],"গাজীপুর":["গাজীপুর সদর","টঙ্গী","কালিয়াকৈর"],"নারায়ণগঞ্জ":["নারায়ণগঞ্জ সদর","সোনারগাঁও","রূপগঞ্জ"],"রাজশাহী":["বোয়ালিয়া","পবা","বাগমারা","পুঠিয়া","গোদাগাড়ী","তানোর"],"বগুড়া":["বগুড়া সদর","শেরপুর","শিবগঞ্জ","ধুনট","গাবতলী"],"নাটোর":["নাটোর সদর","সিংড়া","বড়াইগ্রাম","গুরুদাসপুর","লালপুর"],"সিরাজগঞ্জ":["সিরাজগঞ্জ সদর","শাহজাদপুর","উল্লাপাড়া","বেলকুচি","কাজিপুর"],"চট্টগ্রাম":["কোতোয়ালী","পতেঙ্গা","হালিশহর","হাটহাজারী","পটিয়া","সীতাকুণ্ড"],"সিলেট":["সিলেট সদর","গোলাপগঞ্জ","জকিগঞ্জ","বিয়ানীবাজার"]};
+var ENDPOINT="https://script.google.com/macros/s/AKfycbwYT2CZJIXMDl1wh1f480-suFOGzoutg8TEznA_RIzrtUlocEw3yR_2x6Ucs6XSz-9j/exec"; // এখানে Google Apps Script-এর Web App URL বসান (সেটআপ গাইড দেখুন)
+var PRICE=490,$=id=>document.getElementById(id);
+var bn=n=>String(n);
+var get=()=>{try{return JSON.parse(localStorage.getItem('anaka_orders')||'[]')}catch(e){return[]}};
+var put=o=>{try{localStorage.setItem('anaka_orders',JSON.stringify(o))}catch(e){}};
+var KEY='',ORD=[];
 async function api(p){const u=new URL(ENDPOINT);for(const k in p)u.searchParams.set(k,p[k]);const r=await fetch(u);return r.json()}
 function openM(i){$(i).classList.add('on')}function closeM(i){$(i).classList.remove('on')}
 for(const k in LOC){const o=document.createElement('option');o.value=o.textContent=k;$('d').appendChild(o)}
 function loadU(){const u=$('u');u.innerHTML='<option value="">থানা সিলেক্ট করুন</option>';(LOC[$('d').value]||[]).forEach(x=>{const o=document.createElement('option');o.value=o.textContent=x;u.appendChild(o)});
   const dhaka=['ঢাকা','গাজীপুর','নারায়ণগঞ্জ'].includes($('d').value);document.querySelector('input[name=s][value="'+(dhaka?60:120)+'"]').checked=true;calc()}
-const MAXQ=10;
+var MAXQ=10;
 function chgQ(d){const q=Math.min(MAXQ,Math.max(1,(+$('q').value||1)+d));$('q').value=q;calc()}
 function calc(){const s=+document.querySelector('input[name=s]:checked').value,q=+$('q').value||1;$('qn').textContent=bn(q);$('sub').textContent='৳'+bn(PRICE*q);$('gt').textContent='৳'+bn(PRICE*q+s)}
 calc();
 function copyMail(b){const t='info@anaqahfashion.com';(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{b.textContent='কপি হয়েছে ✓'}).catch(()=>{prompt('ইমেইল কপি করুন:',t)});setTimeout(()=>b.textContent='কপি করুন',2000)}
+function showOk(o,q){$('okTxt').textContent='ধন্যবাদ '+o.name+'! '+q+' কৌটার অর্ডার (মোট ৳'+o.total+') গ্রহণ করা হয়েছে। আমাদের প্রতিনিধি শীঘ্রই ফোনে নিশ্চিত করবেন।';$('okId').textContent=o.id;$('okWa').href='https://wa.me/8801710371432?text='+encodeURIComponent('আসসালামু আলাইকুম, আমি অর্ডার করেছি। অর্ডার আইডি: '+o.id+', নাম: '+o.name);openM('okModal')}
 async function submitOrder(e){e.preventDefault();const b=e.target.querySelector('.sub'),s=+document.querySelector('input[name=s]:checked').value,q=Math.min(MAXQ,Math.max(1,+$('q').value||1));
   const o={id:'ANQ'+Math.floor(100000+Math.random()*900000),name:$('n').value.trim(),phone:$('p').value.trim(),district:$('d').value,upazila:$('u').value,address:$('a').value.trim(),qty:q,shipping:s,total:PRICE*q+s,status:'পেন্ডিং',date:new Date().toLocaleString('en-GB')};
   b.disabled=true;b.textContent='অর্ডার পাঠানো হচ্ছে...';
@@ -518,7 +650,7 @@ async function submitOrder(e){e.preventDefault();const b=e.target.querySelector(
       let ok=false;for(let i=0;i<4&&!ok;i++){await new Promise(r=>setTimeout(r,1500));try{const d=await api({action:'track',q:o.id});ok=!!d.ok}catch(e){}}
       if(!ok)throw new Error('unconfirmed')}
     else{const l=get();l.unshift(o);put(l)}
-    alert('ধন্যবাদ '+o.name+'! আপনার অর্ডার সফল হয়েছে।\n'+bn(q)+' কৌটা, মোট ৳'+bn(o.total)+'\nঅর্ডার আইডি: '+o.id+' (সংরক্ষণ করে রাখুন)\nআমরা শীঘ্রই ফোনে নিশ্চিত করব।');
+    showOk(o,q);
     $('f').reset();$('q').value=1;$('u').innerHTML='<option value="">আগে জেলা সিলেক্ট করুন</option>';calc();
   }catch(err){alert('দুঃখিত, অর্ডার নিশ্চিত হয়নি। ইন্টারনেট দেখে আবার চেষ্টা করুন অথবা 01710371432 নম্বরে কল করুন।')}
   b.disabled=false;b.textContent='অর্ডার কনফার্ম করুন'}
@@ -530,30 +662,72 @@ async function adminLogin(){const k=$('ap').value;if(!k)return;
     if(ENDPOINT){const d=await api({action:'list',key:k});if(!d.ok){alert('ভুল পাসকোড!');return}KEY=k;ORD=d.orders.reverse()}
     else{if(k!=='1234'){alert('ভুল পাসকোড! (ডেমো মোডে পাসকোড 1234)');return}ORD=get()}
   }catch(e){alert('সংযোগ ব্যর্থ হয়েছে, আবার চেষ্টা করুন।');return}
-  $('ap').value='';closeM('adminModal');$('admin').classList.add('on');$('demo').style.display=ENDPOINT?'none':'block';render()}
-async function reloadOrders(){try{if(ENDPOINT){const d=await api({action:'list',key:KEY});if(d.ok)ORD=d.orders.reverse()}else ORD=get();render()}catch(e){alert('রিফ্রেশ ব্যর্থ হয়েছে।')}}
+  $('ap').value='';closeM('adminModal');$('admin').classList.add('on');$('demo').style.display=ENDPOINT?'none':'block';render();startAuto()}
+var FQ='',FS='সব',AT=null;
+var SK={'পেন্ডিং':['p','#d28a17'],'কনফার্মড':['c','#2b6fd6'],'ডেলিভারিড':['d','#1e9e6a'],'বাতিল':['x','#c0392b']};
+var IC={call:'<svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.6 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.6 3.6a1 1 0 01-.25 1z"/></svg>',
+wa:'<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>',
+print:'<svg viewBox="0 0 24 24"><path d="M19 8H5a3 3 0 00-3 3v6h4v4h12v-4h4v-6a3 3 0 00-3-3zm-3 11H8v-5h8v5zm3-7a1 1 0 110-2 1 1 0 010 2zM18 3H6v4h12V3z"/></svg>',
+del:'<svg viewBox="0 0 24 24"><path d="M6 19a2 2 0 002 2h8a2 2 0 002-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>'};
+function toast(m){const t=$('atoast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),4000)}
+function beep(){try{const c=new(window.AudioContext||window.webkitAudioContext)(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=880;g.gain.setValueAtTime(.15,c.currentTime);o.start();o.stop(c.currentTime+.25)}catch(e){}}
+async function fetchOrders(){if(ENDPOINT){const d=await api({action:'list',key:KEY});if(!d.ok)throw 0;return d.orders.reverse()}return get()}
+async function reloadOrders(){try{ORD=await fetchOrders();render();toast('✔ আপডেট হয়েছে')}catch(e){alert('রিফ্রেশ ব্যর্থ হয়েছে।')}}
+async function autoLoad(){if(!$('admin').classList.contains('on'))return;try{const n=await fetchOrders();if(n.length>ORD.length){beep();toast('🔔 নতুন অর্ডার এসেছে!')}ORD=n;render()}catch(e){}}
+function startAuto(){clearInterval(AT);AT=setInterval(autoLoad,30000)}
+function adminLogout(){clearInterval(AT);KEY='';ORD=[];$('admin').classList.remove('on')}
+function setF(v){FS=v;render()}
 function esc(s){const d=document.createElement('div');d.textContent=s==null?'':s;return d.innerHTML}
-function render(){let p=0,c=0,r=0;$('tb').innerHTML=ORD.map((o,i)=>{if(o.status==='পেন্ডিং')p++;if(o.status==='কনফার্মড')c++;if(o.status==='ডেলিভারিড')r+=Number(o.total)||0;
-  const opts=['পেন্ডিং','কনফার্মড','ডেলিভারিড','বাতিল'].map(x=>`<option ${x===o.status?'selected':''}>${x}</option>`).join('');
-  const ph=encodeURIComponent(String(o.phone).replace(/\D/g,''));
-  return `<tr><td>${esc(o.id)}<br><small>${esc(o.date)}</small></td><td><b>${esc(o.name)}</b><br>${esc(o.phone)}<br><a href="tel:${ph}">📞 কল</a> &nbsp; <a href="https://wa.me/88${ph}" target="_blank" rel="noopener">💬 WhatsApp</a></td><td>${esc(o.district)}, ${esc(o.upazila)}<br><small>${esc(o.address)}</small></td><td>৳${esc(o.total)}<br><small>${esc(o.qty||1)} কৌটা</small></td><td><select onchange="setS(${i},this.value)">${opts}</select></td><td><button onclick="delO(${i})" aria-label="মুছুন">🗑</button></td></tr>`}).join('')||'<tr><td colspan="6">এখনও কোনো অর্ডার নেই।</td></tr>';
-  $('s1').textContent=ORD.length;$('s2').textContent=p;$('s3').textContent=c;$('s4').textContent='৳'+r}
+function render(){
+  const cnt={'পেন্ডিং':0,'কনফার্মড':0,'ডেলিভারিড':0,'বাতিল':0};let rev=0,today=0;const td=new Date().toLocaleDateString('en-GB');
+  ORD.forEach(o=>{cnt[o.status]=(cnt[o.status]||0)+1;if(o.status==='ডেলিভারিড')rev+=Number(o.total)||0;if(String(o.date).slice(0,10)===td)today++});
+  $('s1').textContent=ORD.length;$('s5').textContent='আজ: '+today+'টি';$('s2').textContent=cnt['পেন্ডিং'];$('s3').textContent=cnt['কনফার্মড'];$('s4').textContent='৳'+rev;
+  $('fchips').innerHTML=['সব','পেন্ডিং','কনফার্মড','ডেলিভারিড','বাতিল'].map(k=>`<button class="a-chip ${FS===k?'on':''}" onclick="setF('${k}')">${k}<em>${k==='সব'?ORD.length:cnt[k]}</em></button>`).join('');
+  const rows=ORD.map((o,i)=>[o,i]).filter(([o])=>(FS==='সব'||o.status===FS)&&(!FQ||[o.id,o.name,o.phone,o.district,o.upazila,o.address].join(' ').toLowerCase().includes(FQ)));
+  $('list').innerHTML=rows.map(([o,i])=>{
+    const k=(SK[o.status]||SK['পেন্ডিং']),ph=encodeURIComponent(String(o.phone).replace(/\D/g,'')),ini=esc([...String(o.name||'?')][0]);
+    const msg=encodeURIComponent('আসসালামু আলাইকুম, ANAQAH Beauty Care থেকে বলছি। আপনার অর্ডার ('+o.id+') নিয়ে যোগাযোগ করছি।');
+    const opts=Object.keys(SK).map(x=>`<option ${x===o.status?'selected':''}>${x}</option>`).join('');
+    return `<div class="a-card" style="--sc:${k[1]}"><div class="a-av">${ini}</div>
+      <div class="a-main"><b>${esc(o.name)}</b><span>${esc(o.phone)}</span><small>${esc(o.district)}, ${esc(o.upazila)} &mdash; ${esc(o.address)}</small></div>
+      <div class="a-meta"><div class="a-id">${esc(o.id)}<small>${esc(o.date)}</small></div><div class="a-amt">৳${esc(o.total)}<small>${esc(o.qty||1)} কৌটা</small></div></div>
+      <div class="a-act"><select class="a-st st-${k[0]}" onchange="setS(${i},this.value)">${opts}</select>
+        <div class="a-btns"><a class="a-ib" href="tel:${ph}" title="কল করুন">${IC.call}</a><a class="a-ib wa" href="https://wa.me/88${ph}?text=${msg}" target="_blank" rel="noopener" title="WhatsApp">${IC.wa}</a><button class="a-ib" onclick="printSlip(${i})" title="প্রিন্ট স্লিপ">${IC.print}</button><button class="a-ib del" onclick="delO(${i})" title="মুছুন">${IC.del}</button></div></div></div>`}).join('')||'<div class="a-empty">কোনো অর্ডার পাওয়া যায়নি।</div>'}
+function printSlip(i){const o=ORD[i];if(!o)return;const w=window.open('','_blank','width=440,height=640');if(!w){alert('পপআপ ব্লক করা আছে, অনুমতি দিন।');return}
+  w.document.write(`<html><head><meta charset="utf-8"><title>${esc(o.id)}</title><link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet"><style>body{font:15px 'Hind Siliguri',sans-serif;padding:20px;color:#111}h2{margin:0}hr{border:0;border-top:1px dashed #888;margin:12px 0}.r{display:flex;justify-content:space-between;gap:10px;margin:5px 0}.big{font-size:22px;font-weight:700}<\/style><\/head><body><h2>ANAQAH Beauty Care</h2><small>01710371432 | info@anaqahfashion.com</small><hr><div class="r"><span>অর্ডার আইডি</span><b>${esc(o.id)}</b></div><div class="r"><span>তারিখ</span><span>${esc(o.date)}</span></div><hr><div><b>${esc(o.name)}</b></div><div>${esc(o.phone)}</div><div>${esc(o.address)}, ${esc(o.upazila)}, ${esc(o.district)}</div><hr><div class="r"><span>অরন্য শোভা Face Pack (50 গ্রাম) × ${esc(o.qty||1)}</span></div><div class="r"><span>ডেলিভারি চার্জ</span><span>৳${esc(o.shipping)}</span></div><hr><div class="r big"><span>কালেক্ট করুন (COD)</span><span>৳${esc(o.total)}</span></div><\/body><\/html>`);
+  w.document.close();w.focus();setTimeout(()=>w.print(),600)}
+function exportCSV(){const h=['ID','Date','Name','Phone','District','Upazila','Address','Qty','Shipping','Total','Status'];const q=v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"';
+  const rows=ORD.map(o=>[o.id,o.date,o.name,'="'+o.phone+'"',o.district,o.upazila,o.address,o.qty||1,o.shipping,o.total,o.status].map(q).join(','));
+  const blob=new Blob(['\uFEFF'+h.map(q).join(',')+'\r\n'+rows.join('\r\n')],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='anaqah-orders.csv';document.body.appendChild(a);a.click();a.remove()}
 async function setS(i,v){const o=ORD[i];try{if(ENDPOINT){const d=await api({action:'update',key:KEY,id:o.id,status:v});if(!d.ok)throw 0}else{const l=get();l[i].status=v;put(l)}o.status=v}catch(e){alert('স্ট্যাটাস পরিবর্তন হয়নি, আবার চেষ্টা করুন।')}render()}
 async function delO(i){if(!confirm('অর্ডারটি মুছবেন?'))return;const o=ORD[i];try{if(ENDPOINT){const d=await api({action:'delete',key:KEY,id:o.id});if(!d.ok)throw 0}else{const l=get();l.splice(i,1);put(l)}ORD.splice(i,1)}catch(e){alert('মোছা যায়নি।')}render()}
 function checkAdmin(){if(location.hash==='#admin'||location.pathname.replace(/\/+$/,'')==='/admin')openM('adminModal')}
 checkAdmin();addEventListener('hashchange',checkAdmin);
 $('ap').addEventListener('keydown',e=>{if(e.key==='Enter')adminLogin()});
-let h=5,m=42,s=19;setInterval(()=>{s--;if(s<0){s=59;m--}if(m<0){m=59;h--}if(h<0){h=12}$('tH').textContent=bn(String(h).padStart(2,'0'));$('tM').textContent=bn(String(m).padStart(2,'0'));$('tS').textContent=bn(String(s).padStart(2,'0'))},1000);
+var h=5,m=42,s=19;setInterval(()=>{s--;if(s<0){s=59;m--}if(m<0){m=59;h--}if(h<0){h=12}$('tH').textContent=bn(String(h).padStart(2,'0'));$('tM').textContent=bn(String(m).padStart(2,'0'));$('tS').textContent=bn(String(s).padStart(2,'0'))},1000);
 
+var REVIEWS=[]; // শুধু আসল ক্রেতার রিভিউ যোগ করুন: {n:'নাম',l:'এলাকা',s:5,t:'রিভিউর লেখা',v:true}  (v:true মানে "যাচাইকৃত ক্রেতা", শুধু সত্যিকারের অর্ডার হলে দিন)
+(function(){const el=document.getElementById('rvlist');if(!el)return;
+ if(!REVIEWS.length){el.className='rev';el.innerHTML='<div class="rv cta"><h3>আপনার অভিজ্ঞতা জানান</h3><p>ANAQAH অরন্য শোভা ব্যবহার করেছেন? আপনার মতামত আমাদের ফেসবুক পেজে বা WhatsApp-এ জানান, আমরা আনন্দিত হব।</p><div class="row2"><a class="btn btn-gold" href="https://www.facebook.com/anaqahfashion.bd" target="_blank" rel="noopener"><span class="bi"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg></span>ফেসবুক পেজে যান</a><a class="btn btn-line" href="https://wa.me/8801710371432" target="_blank" rel="noopener"><span class="bi"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg></span>WhatsApp-এ জানান</a></div></div>';return}
+ const n=REVIEWS.length,avg=(REVIEWS.reduce((a,r)=>a+(r.s||5),0)/n).toFixed(1);
+ el.className='rvw';
+ el.innerHTML='<aside class="rvl"><img src="images/product.jpg" alt="অরন্য শোভা" loading="lazy"><h3>ক্রেতাদের মতামত</h3><div class="big gt">'+avg+' <small>/ 5</small></div><div class="rs">★★★★★</div><p>'+n+' জন ক্রেতার মতামত</p><a href="#order" class="btn btn-gold">আপনিও অর্ডার করুন</a></aside><div class="rvr"></div>';
+ const box=el.querySelector('.rvr');
+ REVIEWS.forEach(r=>{const c=document.createElement('div');c.className='rvc';
+  c.innerHTML='<div class="rtop"><div class="av"></div><div class="who"><b></b><small></small></div><span class="vb"></span></div><div class="st"></div><p></p>';
+  c.querySelector('.av').textContent=[...r.n][0];c.querySelector('b').textContent=r.n;c.querySelector('small').textContent=r.l||'';
+  if(r.v)c.querySelector('.vb').textContent='✔ যাচাইকৃত ক্রেতা';
+  c.querySelector('.st').textContent='★'.repeat(r.s||5)+'☆'.repeat(5-(r.s||5));c.querySelector('p').textContent=r.t;box.appendChild(c)})
+})();
 (function(){
 document.documentElement.classList.add('js');
-const els=[...document.querySelectorAll('.sec-h,.ben,.chip,.step,.tips,.rv,details,.cmp>div,.sg>div,.pr>div,.spec,.form,.banner,.ct-l,.ct-r li,.fcol,.stats .wrap>div')];
+var els=[...document.querySelectorAll('.sec-h,.ben,.chip,.step,.tips,.rv,details,.cmp>div,.sg>div,.pr>div,.spec,.form,.rvl,.rvc,.banner,.ct-l,.ct-r li,.fcol,.stats .wrap>div')];
 els.forEach(e=>e.classList.add('reveal'));
-const io=new IntersectionObserver(en=>en.forEach(x=>{if(!x.isIntersecting)return;const e=x.target,i=[...e.parentNode.children].indexOf(e);e.style.transitionDelay=Math.min(i,6)*90+'ms';e.classList.add('in');setTimeout(()=>{e.style.transitionDelay=''},1400);io.unobserve(e)}),{threshold:.12});
+var io=new IntersectionObserver(en=>en.forEach(x=>{if(!x.isIntersecting)return;const e=x.target,i=[...e.parentNode.children].indexOf(e);e.style.transitionDelay=Math.min(i,6)*110+'ms';e.classList.add('in');setTimeout(()=>{e.style.transitionDelay=''},1400);io.unobserve(e)}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
 els.forEach(e=>io.observe(e));
-const co=new IntersectionObserver(en=>en.forEach(x=>{if(!x.isIntersecting)return;const e=x.target,t=+e.dataset.n,st=performance.now();(function f(n){const p=Math.min(1,(n-st)/1300);e.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(st);co.unobserve(e)}),{threshold:.5});
+var co=new IntersectionObserver(en=>en.forEach(x=>{if(!x.isIntersecting)return;const e=x.target,t=+e.dataset.n,st=performance.now();(function f(n){const p=Math.min(1,(n-st)/1300);e.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(st);co.unobserve(e)}),{threshold:.5});
 document.querySelectorAll('[data-n]').forEach(e=>co.observe(e));
-const bar=$('pg'),up=$('up'),hd=document.querySelector('header');
+var bar=$('pg'),up=$('up'),hd=document.querySelector('header');
 addEventListener('scroll',()=>{const h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?h.scrollTop/m*100:0)+'%';up.classList.toggle('on',h.scrollTop>600);hd.classList.toggle('sh',h.scrollTop>10)},{passive:true});
 })();
 </script>
