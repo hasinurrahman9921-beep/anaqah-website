@@ -4180,6 +4180,302 @@
                 font-size: 19px
             }
         }
+
+        /* v11: hero decorations must not block clicks; smart bottom bar */
+        .hero::before,
+        .hero::after {
+            pointer-events: none
+        }
+
+        .card-offer {
+            z-index: 2
+        }
+
+        .mbar {
+            transition: transform .35s cubic-bezier(.22, 1, .36, 1)
+        }
+
+        @media(max-width:760px) {
+
+            .fab,
+            #up {
+                transition: bottom .35s cubic-bezier(.22, 1, .36, 1), opacity .3s
+            }
+
+            body.bar-hide .mbar {
+                transform: translateY(110%)
+            }
+
+            body.bar-hide .fab,
+            body.bar-hide #up {
+                bottom: calc(16px + env(safe-area-inset-bottom, 0px))
+            }
+        }
+
+        /* v12: new sections + colour grading */
+        .offer-note {
+            display: inline-block;
+            margin: 10px 0 6px;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #8a5f1c;
+            background: #fbf0d6;
+            border: 1px solid #ecd8a8;
+            border-radius: 99px;
+            padding: 3px 14px
+        }
+
+        .bs {
+            display: grid;
+            grid-template-columns: 1.3fr .7fr;
+            gap: 28px;
+            align-items: center;
+            max-width: 960px;
+            margin: 0 auto
+        }
+
+        .bs-t h3 {
+            font-size: 20px;
+            color: var(--g9);
+            margin-bottom: 10px
+        }
+
+        .bs-t p {
+            color: var(--mute);
+            font-size: 14.5px;
+            margin-bottom: 10px
+        }
+
+        .bs-t .btn {
+            margin-top: 8px
+        }
+
+        .bs-l {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px
+        }
+
+        .bs-l li {
+            background: linear-gradient(150deg, #0f4533, #071f17);
+            color: #e3efe8;
+            border: 1px solid rgba(243, 217, 164, .3);
+            border-radius: 16px;
+            padding: 16px 10px;
+            text-align: center
+        }
+
+        .bs-l b {
+            display: block;
+            font-size: 20px;
+            background: var(--goldg);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent
+        }
+
+        .bs-l span {
+            font-size: 12.5px;
+            color: #c5dccf
+        }
+
+        .ind-g {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            max-width: 960px;
+            margin: 0 auto
+        }
+
+        .ind-g>div {
+            background: var(--cream);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 18px;
+            box-shadow: var(--shd)
+        }
+
+        .ind-g i {
+            display: grid;
+            place-items: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--goldg);
+            color: #2a1d05;
+            font: 700 15px 'Hind Siliguri';
+            font-style: normal;
+            margin-bottom: 8px
+        }
+
+        .ind-g h3 {
+            font-size: 16px;
+            color: var(--g9);
+            margin-bottom: 3px
+        }
+
+        .ind-g p {
+            font-size: 14px;
+            color: var(--mute)
+        }
+
+        .pm {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            max-width: 960px;
+            margin: 0 auto
+        }
+
+        .pm>div {
+            text-align: center;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 20px 14px;
+            box-shadow: var(--shd)
+        }
+
+        .pm i {
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 10px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1b6b4e, #0f4533);
+            color: var(--gold2)
+        }
+
+        .pm svg {
+            width: 21px;
+            height: 21px;
+            fill: currentColor
+        }
+
+        .pm h3 {
+            font-size: 15.5px;
+            color: var(--g9)
+        }
+
+        .pm p {
+            font-size: 13.5px;
+            color: var(--mute)
+        }
+
+        .fin {
+            max-width: 960px;
+            margin: 22px auto 0;
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 22px;
+            color: #e3efe8;
+            border: 1px solid rgba(243, 217, 164, .3);
+            background: radial-gradient(500px 240px at 80% 0, rgba(63, 160, 118, .4), transparent 70%), linear-gradient(150deg, #0f4533, #071f17)
+        }
+
+        .fin h3 {
+            color: #fff;
+            font-size: 21px
+        }
+
+        .fin p {
+            color: var(--gold2);
+            margin: 6px 0 16px;
+            font-size: 14.5px
+        }
+
+        .fin s {
+            opacity: .7
+        }
+
+        @media(max-width:800px) {
+            .bs {
+                grid-template-columns: 1fr
+            }
+
+            .ind-g {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .pm {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
+        @media(max-width:480px) {
+            .ind-g {
+                gap: 10px
+            }
+
+            .ind-g>div {
+                padding: 14px 12px
+            }
+
+            .ind-g h3 {
+                font-size: 15px
+            }
+
+            .ind-g p {
+                font-size: 13px
+            }
+
+            .pm>div {
+                padding: 16px 10px
+            }
+        }
+
+        /* colour grading: emerald + champagne gold + warm ivory */
+        :root {
+            --cream: #fcf9f2;
+            --line: #e8e2d3
+        }
+
+        .hero {
+            background: radial-gradient(760px 460px at 90% 4%, rgba(70, 170, 126, .48), transparent 60%), radial-gradient(560px 420px at 0 100%, rgba(226, 178, 92, .22), transparent 62%), linear-gradient(165deg, #0e4030, #05170f)
+        }
+
+        .stats {
+            background: linear-gradient(180deg, #fff, #fcf9f2)
+        }
+
+        .sec-h h2 {
+            color: #0b3a2a
+        }
+
+        .sec-h h2::after {
+            width: 48px;
+            height: 2px
+        }
+
+        .btn-g,
+        .sub {
+            background: linear-gradient(135deg, #1d7455, #0c3d2d);
+            box-shadow: 0 6px 16px rgba(12, 61, 45, .25)
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #b8862f, #f6dfaa 48%, #cf9a40 64%, #94651f)
+        }
+
+        .card-offer {
+            box-shadow: 0 30px 70px rgba(0, 0, 0, .42), 0 0 0 6px rgba(243, 217, 164, .1), 0 0 60px rgba(226, 178, 92, .12)
+        }
+
+        .good,
+        .yes,
+        .tips {
+            background: linear-gradient(150deg, #0f4533, #06180f)
+        }
+
+        #reviews {
+            background: linear-gradient(180deg, #e8f3ec, #f4f9f5) !important
+        }
+
+        footer {
+            border-top: 2px solid rgba(226, 178, 92, .5)
+        }
     </style>
     <script
         type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"ANAQAH অরন্য শোভা Natural Face Pack","brand":{"@type":"Brand","name":"ANAQAH Beauty Care"},"description":"মূলতানি মাটি, সাদা চন্দন, হলুদ, বেসন ও অ্যালোভেরাসহ ৯টি ভেষজ উপাদানের ফেস প্যাক, ৫০ গ্রাম।","image":"images/product.jpg","offers":{"@type":"Offer","priceCurrency":"BDT","price":"490","availability":"https://schema.org/InStock"}}</script>
@@ -4209,7 +4505,7 @@
             <div>
                 <span class="tag">100% প্রাকৃতিক ভেষজ ফর্মুলা</span>
                 <h1>ব্রণের দাগ ও তৈলাক্ত ভাব কমিয়ে ফিরে পান <span class="gt">উজ্জ্বল, প্রাণবন্ত ত্বক</span></h1>
-                <p class="lead">মূলতানি মাটি, সাদা চন্দন, হলুদ, বেসন ও অ্যালোভেরার সংমিশ্রণে তৈরি ANAQAH অর্গানিক হারবাল
+                <p class="lead">ঘিলাফলের শ্বাস, সোহাগা, ফিটকারি, হলুদ মাটি, কাঁচা হলুদ, মসুর ডাল বেসন, অ্যালোভেরা ও সাদা চন্দনের সংমিশ্রণে তৈরি ANAQAH অর্গানিক হারবাল
                     ফেস প্যাক — নিয়মিত ব্যবহারে ত্বক হয় পরিষ্কার ও সতেজ।</p>
                 <div class="cta"><a href="#order" class="btn btn-gold">এখনই অর্ডার করুন</a><a href="#benefits"
                         class="btn btn-line">উপকারিতা দেখুন</a></div>
@@ -4224,11 +4520,7 @@
                 <div><span class="old">৳750</span><span class="badge">35% ছাড়</span></div>
                 <div class="price">৳490</div>
                 <small style="color:var(--mute)">+ ডেলিভারি চার্জ</small>
-                <div class="timer">
-                    <div><b id="tH">05</b><span>ঘণ্টা</span></div>
-                    <div><b id="tM">42</b><span>মিনিট</span></div>
-                    <div><b id="tS">19</b><span>সেকেন্ড</span></div>
-                </div>
+                <div class="offer-note">⏳ সীমিত সময়ের অফার মূল্য</div>
                 <a href="#order" class="btn btn-gold" style="width:100%">অর্ডার নিশ্চিত করুন</a>
                 <button type="button" class="btn btn-o2" onclick="addToCart()" style="width:100%;margin-top:10px"><span
                         class="bi"><svg viewBox="0 0 24 24">
@@ -4561,6 +4853,75 @@
 
 
 
+
+    <section class="brand" id="about">
+        <div class="wrap">
+            <div class="sec-h"><span class="eyebrow">আমাদের সম্পর্কে</span>
+                <h2>কেন ANAQAH Beauty Care?</h2>
+                <p>প্রকৃতির উপাদান, সহজ ব্যবহার, আর ভরসার সাথে সারা দেশে ডেলিভারি।</p>
+            </div>
+            <div class="bs">
+                <div class="bs-t">
+                    <h3>প্রাকৃতিক ভেষজের উপর ভরসা</h3>
+                    <p>ANAQAH Beauty Care ত্বকের যত্নকে সহজ রাখতে বিশ্বাস করে। আমাদের অরন্য শোভা ফেস প্যাকে আছে ৯টি
+                        পরিচিত ভেষজ উপাদান, যেগুলো বহুকাল ধরে আমাদের দেশে ত্বকের যত্নে ব্যবহৃত হয়ে আসছে।</p>
+                    <p>আমরা চাই আপনি কী ব্যবহার করছেন তা জেনে বুঝে ব্যবহার করুন। তাই উপাদানের তালিকা, ব্যবহারের নিয়ম আর
+                        সতর্কতা সবকিছু খোলাখুলি দেওয়া আছে।</p>
+                    <a href="#order" class="btn btn-gold">অর্ডার করুন</a>
+                </div>
+                <ul class="bs-l">
+                    <li><b>৯টি</b><span>ভেষজ উপাদান</span></li>
+                    <li><b>৫০ গ্রাম</b><span>প্রতি কৌটা</span></li>
+                    <li><b>৬৪ জেলা</b><span>সারা দেশে ডেলিভারি</span></li>
+                    <li><b>COD</b><span>হাতে পেয়ে মূল্য দিন</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="pm-s">
+        <div class="wrap">
+            <div class="sec-h"><span class="eyebrow">আমাদের প্রতিশ্রুতি</span>
+                <h2>নিশ্চিন্তে অর্ডার করুন</h2>
+            </div>
+            <div class="pm">
+                <div><i><svg viewBox="0 0 24 24">
+                            <path
+                                d="M3 6a2 2 0 012-2h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6zm9 9a3 3 0 100-6 3 3 0 000 6z" />
+                        </svg></i>
+                    <h3>ক্যাশ অন ডেলিভারি</h3>
+                    <p>পণ্য হাতে পেয়ে, দেখে তারপর মূল্য দিন।</p>
+                </div>
+                <div><i><svg viewBox="0 0 24 24">
+                            <path
+                                d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.6 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.6 3.6a1 1 0 01-.25 1z" />
+                        </svg></i>
+                    <h3>ফোনে নিশ্চিতকরণ</h3>
+                    <p>অর্ডারের পর আমাদের প্রতিনিধি ফোন করে নিশ্চিত করবেন।</p>
+                </div>
+                <div><i><svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" />
+                        </svg></i>
+                    <h3>অর্ডার ট্র্যাকিং</h3>
+                    <p>অর্ডার আইডি বা মোবাইল নম্বর দিয়ে স্ট্যাটাস দেখুন।</p>
+                </div>
+                <div><i><svg viewBox="0 0 24 24">
+                            <path
+                                d="M3 7h11v9H3zm11 3h4l3 3v3h-7zM7 19a2 2 0 100-4 2 2 0 000 4zm10 0a2 2 0 100-4 2 2 0 000 4z" />
+                        </svg></i>
+                    <h3>সারা দেশে ডেলিভারি</h3>
+                    <p>ঢাকায় ১–২ দিন, অন্যান্য এলাকায় ২–৪ দিনে পৌঁছায়।</p>
+                </div>
+            </div>
+            <div class="fin">
+                <h3>আপনার ত্বকের যত্ন শুরু হোক আজই</h3>
+                <p>অফার মূল্য ৳490 <s>৳750</s> — ক্যাশ অন ডেলিভারি</p><a href="#order" class="btn btn-gold">এখনই অর্ডার
+                    করুন</a>
+            </div>
+        </div>
+    </section>
+
     <footer id="contact">
         <div class="wrap">
             <div class="fg">
@@ -4703,8 +5064,9 @@
                 </div>
             </div>
             <div class="a-tb"><button class="a-btn g" onclick="exportCSV()">&darr; CSV</button><button id="rfb"
-                    class="a-btn g" onclick="reloadOrders()"><span class="rot">&#8635;</span> রিফ্রেশ</button><button
-                    class="a-btn r" onclick="adminLogout()">লগআউট</button></div>
+                    class="a-btn g" onclick="this.classList.add('spin');setTimeout(()=>location.reload(),150)"><span
+                        class="rot">&#8635;</span> রিফ্রেশ</button><button class="a-btn r"
+                    onclick="adminLogout()">লগআউট</button></div>
         </div>
         <div id="demo" style="display:none;background:#fff3cd;color:#664d03;padding:10px 16px;font-size:13px">&#9888;
             এখনও অর্ডার-ডাটাবেস (Google Sheet) যুক্ত হয়নি, তাই অর্ডার শুধু এই ব্রাউজারে জমা হচ্ছে।</div>
@@ -4807,14 +5169,14 @@
         }
         async function track() {
             const q = $('ti').value.trim(), r = $('tr'); if (!q) return; r.hidden = false; r.textContent = 'খোঁজা হচ্ছে...'; let f = null;
-            try { if (ENDPOINT) { const d = await api({ action: 'track', q }); if (d.ok) f = d } else f = get().find(o => o.id === q || o.phone === q) } catch (e) { r.textContent = 'সংযোগ ব্যর্থ হয়েছে, আবার চেষ্টা করুন।'; return }
+            try { if (ENDPOINT) { let d = await api({ action: 'track', q }); if (!d.ok && /^01\d{9}$/.test(q)) d = await api({ action: 'track', q: q.slice(1) }); if (d.ok) { f = d; f.phone = fixP(f.phone) } } else f = get().find(o => o.id === q || o.phone === q) } catch (e) { r.textContent = 'সংযোগ ব্যর্থ হয়েছে, আবার চেষ্টা করুন।'; return }
             r.textContent = f ? 'আইডি: ' + f.id + ' — ' + f.status + '\nকাস্টমার: ' + f.name + '\nমোট: ৳' + bn(f.total) : 'কোনো তথ্য পাওয়া যায়নি।'
         }
         async function _adminLogin() {
             const k = $('ap').value; if (!k) return;
             try {
-                if (ENDPOINT) { const d = await api({ action: 'list', key: k }); if (!d.ok) { alert('ভুল পাসকোড!'); return } KEY = k; ORD = d.orders.reverse() }
-                else { if (k !== '1234') { alert('ভুল পাসকোড! (ডেমো মোডে পাসকোড 1234)'); return } ORD = get() }
+                if (ENDPOINT) { const d = await api({ action: 'list', key: k }); if (!d.ok) { alert('ভুল পাসকোড!'); return } KEY = k; ORD = norm(d.orders.reverse()) }
+                else { if (k !== '1234') { alert('ভুল পাসকোড! (ডেমো মোডে পাসকোড 1234)'); return } ORD = norm(get()) }
             } catch (e) { alert('সংযোগ ব্যর্থ হয়েছে, আবার চেষ্টা করুন।'); return }
             try { sessionStorage.setItem('anq_k', k) } catch (e) { } KEY = k; $('ap').value = ''; closeM('adminModal', 1); setAdminUI(true); $('demo').style.display = ENDPOINT ? 'none' : 'block'; render(); startAuto()
         }
@@ -4828,8 +5190,10 @@
         };
         function toast(m) { const t = $('atoast'); t.textContent = m; t.classList.add('on'); setTimeout(() => t.classList.remove('on'), 4000) }
         function beep() { try { const c = new (window.AudioContext || window.webkitAudioContext)(), o = c.createOscillator(), g = c.createGain(); o.connect(g); g.connect(c.destination); o.frequency.value = 880; g.gain.setValueAtTime(.15, c.currentTime); o.start(); o.stop(c.currentTime + .25) } catch (e) { } }
-        async function fetchOrders() { if (ENDPOINT) { const d = await api({ action: 'list', key: KEY }); if (!d.ok) throw 0; return d.orders.reverse() } return get() }
+        async function fetchOrders() { if (ENDPOINT) { const d = await api({ action: 'list', key: KEY }); if (!d.ok) throw 0; return norm(d.orders.reverse()) } return norm(get()) }
         var BUSY = 0;
+        function fixP(p) { p = String(p == null ? '' : p).replace(/\D/g, ''); if (/^1\d{9}$/.test(p)) p = '0' + p; return p }
+        function norm(a) { (a || []).forEach(o => { o.phone = fixP(o.phone) }); return a }
         async function adminLogin() { const lb = document.querySelector('#adminModal .btn-g'); if (lb.disabled) return; lb.disabled = true; lb.textContent = 'প্রবেশ করা হচ্ছে...'; try { await _adminLogin() } finally { lb.disabled = false; lb.textContent = 'প্রবেশ করুন' } }
         async function reloadOrders() { const b = $('rfb'); b.classList.add('spin'); b.disabled = true; try { ORD = await fetchOrders(); render(); toast('✔ আপডেট হয়েছে — ' + new Date().toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' })) } catch (e) { alert('রিফ্রেশ ব্যর্থ হয়েছে, আবার চেষ্টা করুন।') } b.classList.remove('spin'); b.disabled = false }
         async function autoLoad() { if (!$('admin').classList.contains('on') || BUSY) return; try { const n = await fetchOrders(); if (n.length > ORD.length) { beep(); toast('🔔 নতুন অর্ডার এসেছে!') } ORD = n; render() } catch (e) { } }
@@ -4893,7 +5257,6 @@
         addEventListener('click', e => { if (!e.target.closest('#fab')) toggleFab(false) });
         addEventListener('keydown', e => { if (e.key === 'Escape') toggleFab(false) });
         $('ap').addEventListener('keydown', e => { if (e.key === 'Enter') adminLogin() });
-        var h = 5, m = 42, s = 19; setInterval(() => { s--; if (s < 0) { s = 59; m-- } if (m < 0) { m = 59; h-- } if (h < 0) { h = 12 } $('tH').textContent = bn(String(h).padStart(2, '0')); $('tM').textContent = bn(String(m).padStart(2, '0')); $('tS').textContent = bn(String(s).padStart(2, '0')) }, 1000);
 
         /* রিভিউ: নিচের ৫টি নমুনা। আসল ক্রেতার নাম ও মতামত পেলে এগুলো বদলে দিন। v:true দিলে "যাচাইকৃত ক্রেতা" ব্যাজ আসবে — শুধু সত্যিকারের অর্ডার হলে দিন। */
         var REVIEWS = [
@@ -4927,14 +5290,14 @@
         })();
         (function () {
             document.documentElement.classList.add('js');
-            var els = [...document.querySelectorAll('.sec-h,.ben,.chip,.step,.tips,.rv,details,.cmp>div,.sg>div,.pr>div,.spec,.form,.rcw,.banner,.ct-l,.ct-r li,.fcol,.stats .wrap>div')];
+            var els = [...document.querySelectorAll('.sec-h,.bs>*,.pm>div,.fin,.ben,.chip,.step,.tips,.rv,details,.cmp>div,.sg>div,.pr>div,.spec,.form,.rcw,.banner,.ct-l,.ct-r li,.fcol,.stats .wrap>div')];
             els.forEach(e => e.classList.add('reveal'));
             var io = new IntersectionObserver(en => en.forEach(x => { if (!x.isIntersecting) return; const e = x.target, i = [...e.parentNode.children].indexOf(e); e.style.transitionDelay = Math.min(i, 4) * 70 + 'ms'; e.classList.add('in'); setTimeout(() => { e.style.transitionDelay = '' }, 900); io.unobserve(e) }), { threshold: .04, rootMargin: '0px 0px 12% 0px' });
             els.forEach(e => io.observe(e));
             var co = new IntersectionObserver(en => en.forEach(x => { if (!x.isIntersecting) return; const e = x.target, t = +e.dataset.n, st = performance.now(); (function f(n) { const p = Math.min(1, (n - st) / 1300); e.textContent = Math.round(t * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(f) })(st); co.unobserve(e) }), { threshold: .5 });
             document.querySelectorAll('[data-n]').forEach(e => co.observe(e));
             var bar = $('pg'), up = $('up'), hd = document.querySelector('header');
-            addEventListener('scroll', () => { const h = document.documentElement, m = h.scrollHeight - h.clientHeight; bar.style.width = (m > 0 ? h.scrollTop / m * 100 : 0) + '%'; up.classList.toggle('on', h.scrollTop > 600); hd.classList.toggle('sh', h.scrollTop > 10) }, { passive: true });
+            var ly = 0; addEventListener('scroll', () => { const y = scrollY; if (Math.abs(y - ly) > 8) { document.body.classList.toggle('bar-hide', y > ly && y > 300); ly = y } const h = document.documentElement, m = h.scrollHeight - h.clientHeight; bar.style.width = (m > 0 ? h.scrollTop / m * 100 : 0) + '%'; up.classList.toggle('on', h.scrollTop > 600); hd.classList.toggle('sh', h.scrollTop > 10) }, { passive: true });
         })();
     </script>
 </body>
