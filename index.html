@@ -514,11 +514,13 @@ async function submitOrder(e){e.preventDefault();const b=e.target.querySelector(
   const o={id:'ANQ'+Math.floor(100000+Math.random()*900000),name:$('n').value.trim(),phone:$('p').value.trim(),district:$('d').value,upazila:$('u').value,address:$('a').value.trim(),qty:q,shipping:s,total:PRICE*q+s,status:'পেন্ডিং',date:new Date().toLocaleString('en-GB')};
   b.disabled=true;b.textContent='অর্ডার পাঠানো হচ্ছে...';
   try{
-    if(ENDPOINT){await fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(o)})}
+    if(ENDPOINT){await fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(o)});
+      let ok=false;for(let i=0;i<4&&!ok;i++){await new Promise(r=>setTimeout(r,1500));try{const d=await api({action:'track',q:o.id});ok=!!d.ok}catch(e){}}
+      if(!ok)throw new Error('unconfirmed')}
     else{const l=get();l.unshift(o);put(l)}
     alert('ধন্যবাদ '+o.name+'! আপনার অর্ডার সফল হয়েছে।\n'+bn(q)+' কৌটা, মোট ৳'+bn(o.total)+'\nঅর্ডার আইডি: '+o.id+' (সংরক্ষণ করে রাখুন)\nআমরা শীঘ্রই ফোনে নিশ্চিত করব।');
     $('f').reset();$('q').value=1;$('u').innerHTML='<option value="">আগে জেলা সিলেক্ট করুন</option>';calc();
-  }catch(err){alert('দুঃখিত, অর্ডার পাঠানো যায়নি। ইন্টারনেট দেখে আবার চেষ্টা করুন অথবা 01710371432 নম্বরে কল করুন।')}
+  }catch(err){alert('দুঃখিত, অর্ডার নিশ্চিত হয়নি। ইন্টারনেট দেখে আবার চেষ্টা করুন অথবা 01710371432 নম্বরে কল করুন।')}
   b.disabled=false;b.textContent='অর্ডার কনফার্ম করুন'}
 async function track(){const q=$('ti').value.trim(),r=$('tr');if(!q)return;r.hidden=false;r.textContent='খোঁজা হচ্ছে...';let f=null;
   try{if(ENDPOINT){const d=await api({action:'track',q});if(d.ok)f=d}else f=get().find(o=>o.id===q||o.phone===q)}catch(e){r.textContent='সংযোগ ব্যর্থ হয়েছে, আবার চেষ্টা করুন।';return}
